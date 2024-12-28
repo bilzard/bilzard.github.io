@@ -6,7 +6,7 @@ permalink: /about/
 
 <img src="{{ "/assets/images/profile.jpg" | relative_url }}" alt="Profile Image" class="profile-image">
 
-ML, random thoughts.
+Machine learning engineer / Kaggle Master
 
 - Twitter: [@bilzrd](https://x.com/bilzrd)
 - GitHub: [@bilzard](https://github.com/bilzard)
