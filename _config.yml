@@ -55,5 +55,5 @@ plugins:
 
 markdown: kramdown
 kramdown:
-  math_engine: katex
+  math_engine: mathjax
   input: GFM # GitHub Flavored Markdown (GFM)を利用
