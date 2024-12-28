@@ -16,4 +16,7 @@
         "*.html": "liquid",
         "*.liquid": "liquid",
     },
+    "insertDateString.format": "YYYY-MM-DD hh:mm:ss +0900",
+    "insertDateString.formatDate": "YYYY-MM-DD",
+    "insertDateString.formatTime": "hh:mm:ss",
 }
