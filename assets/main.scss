@@ -3,3 +3,21 @@
 ---
 
 @import "minima";
+
+/* カスタムスタイルをここに追記 */
+.profile-container {
+    width: 150px; /* クロップの幅 */
+    height: 150px; /* クロップの高さ */
+    overflow: hidden; /* 親要素の外に出た部分を非表示にする */
+    border-radius: 50%; /* 円形にする（必要な場合） */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 110%;
+    height: 110%;
+    object-fit: cover; /* 中央でクロップ */
+    object-position: center; /* 中央に配置 */
+}
