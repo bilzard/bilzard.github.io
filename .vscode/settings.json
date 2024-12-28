@@ -13,6 +13,8 @@
     "files.associations": {
         "*.html": "liquid",
         "*.liquid": "liquid",
+        "*.css": "jekyll",
+        "*.scss": "jekyll",
     },
     "insertDateString.format": "YYYY-MM-DD hh:mm:ss +0900",
     "insertDateString.formatDate": "YYYY-MM-DD",
