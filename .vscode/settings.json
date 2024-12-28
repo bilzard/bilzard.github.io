@@ -11,8 +11,6 @@
         "editor.acceptSuggestionOnEnter": "off"
     },
     "files.associations": {
-        "*.md": "jekyll",
-        "*.markdown": "jekyll",
         "*.html": "liquid",
         "*.liquid": "liquid",
     },
