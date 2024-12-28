@@ -8,7 +8,7 @@ permalink: /about/
   <img src="{{ "/assets/images/profile.png" | relative_url }}" alt="Profile Image" class="profile-image">
 </div>
 
-A ML blog of my interest.
+ML, random thoughts.
 
 - Twitter: [@bilzrd](https://x.com/bilzrd)
 - GitHub: [@bilzard](https://github.com/bilzard)
