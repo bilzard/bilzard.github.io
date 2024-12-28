@@ -4,9 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<div class="profile-container">
-  <img src="{{ "/assets/images/profile.png" | relative_url }}" alt="Profile Image" class="profile-image">
-</div>
+<img src="{{ "/assets/images/profile.jpg" | relative_url }}" alt="Profile Image" class="profile-image">
 
 ML, random thoughts.
 
