@@ -53,3 +53,6 @@ plugins:
 
 markdown: GFM # `kramdown` or `GFM`
 google_analytics: G-530W7ZYV8T
+github:
+  repository_url: null
+  is_project_page: false
