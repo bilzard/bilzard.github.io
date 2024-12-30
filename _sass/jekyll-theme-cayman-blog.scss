@@ -164,6 +164,36 @@ a {
   }
 }
 
+.categories {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap; /* タグを複数行で表示 */
+  gap: 0.5rem; /* タグ間のスペース */
+  justify-content: center; /* 水平方向に中央揃え */
+}
+
+.category {
+  display: inline-block;
+  background-color: #c0c0c0; /* グレーの背景 */
+  color: #333; /* テキストカラー */
+  padding: 0.2rem 0.6rem; /* 内側の余白 */
+  border-radius: 0.5rem; /* 輪郭を丸くする */
+  text-decoration: none; /* 下線を消す */
+
+  margin-bottom: 0rem;
+  font-weight: normal;
+  opacity: 0.7;
+  @include large {
+    font-size: 1.0rem;
+  }
+  @include medium {
+    font-size: 0.95rem;
+  }
+  @include small {
+    font-size: 0.75rem;
+  }
+}
+
 .project-date {
   margin-bottom: 0rem;
   font-weight: normal;
