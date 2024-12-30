@@ -164,7 +164,7 @@ a {
   }
 }
 
-.categories {
+.tags {
   margin: 1rem 0;
   display: flex;
   flex-wrap: wrap; /* タグを複数行で表示 */
@@ -172,7 +172,7 @@ a {
   justify-content: center; /* 水平方向に中央揃え */
 }
 
-.category {
+.tag {
   display: inline-block;
   background-color: #c0c0c0; /* グレーの背景 */
   color: #333; /* テキストカラー */

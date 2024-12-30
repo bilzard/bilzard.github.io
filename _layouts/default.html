@@ -86,9 +86,9 @@
                 • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page_author }}</span></span>
                 {% endif %}
             </h2>
-            <div class="categories">
-              {% for category in page.categories %}
-                <span class="category">#{{ category }}</span>
+            <div class="tags">
+              {% for tag in page.tags %}
+                <span class="tag">#{{ tag }}</span>
               {% endfor %}
             </div>
             {% endif %}
