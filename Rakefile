@@ -24,7 +24,8 @@ task :post do
 layout: post
 title: #{title}
 date: #{timestamp}
-categories: tech
+categories: [tech]
+tags: []
 latex: true
 ---
 EOS
