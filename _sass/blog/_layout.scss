@@ -112,22 +112,28 @@
 /**
  * Post list
  */
+
+.main-content {
+  li {
+    margin-left: 1rem;
+  }
+}
+
 .post-list {
   margin-left: 0;
   list-style: none;
 
   > li {
+    margin-left: 0;
     margin-bottom: $spacing-unit * 1.5;
   }
-
   > li > h2 {
     margin-top: 0rem;
     margin-bottom: 0.4rem;
   }
-
   > li > p {
     margin-top: 0rem;
-  }  
+  }
 }
 
 @include media-query($on-palm) {
