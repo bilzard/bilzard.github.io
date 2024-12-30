@@ -220,6 +220,11 @@ a {
     margin-top: 0;
   }
 
+  ul,
+  ol {
+    padding-left: 0;
+  }
+
   @include large {
     max-width: 64rem;
     padding: 3rem 6rem;
@@ -235,12 +240,6 @@ a {
   @include small {
     padding: 2rem 1rem;
     font-size: 1rem;
-
-    ul,
-    ol {
-      margin-top: 0;
-      padding-left: 0;
-    }
   }
 
   kbd {
