@@ -52,3 +52,4 @@ plugins:
 #   - vendor/ruby/
 
 markdown: GFM # `kramdown` or `GFM`
+google_analytics: G-530W7ZYV8T
