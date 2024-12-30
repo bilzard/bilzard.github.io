@@ -1,0 +1,31 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.profile-image {
+    width: 150px; /* クロップの幅 */
+    height: 150px; /* クロップの高さ */
+    overflow: hidden; /* 親要素の外に出た部分を非表示にする */
+    border-radius: 50%; /* 円形にする（必要な場合） */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 1.5em 0;
+}
+
+.post-list {
+    > li {
+        font-weight: 500;
+    }
+    > li > h2 {
+        font-weight: 600;
+    }
+    > li > p {
+        font-weight: 500;
+    }
+}
+.post-link {
+    @include relative-font-size(1.25);
+    font-weight: 600;
+}

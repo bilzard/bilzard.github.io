@@ -2,6 +2,8 @@
 layout: page
 title: Profile
 permalink: /profile/
+ref: profile
+order: 0
 ---
 
 <img src="{{ "/assets/images/profile.jpg" | relative_url }}" alt="Profile Image" class="profile-image">

@@ -28,7 +28,7 @@ twitter_username: bilzrd
 github_username: bilzard
 
 # Build settings
-theme: minima
+theme: jekyll-theme-cayman-blog
 plugins:
   - jekyll-feed
 # Exclude from processing.
