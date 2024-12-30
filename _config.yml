@@ -24,9 +24,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   ML, Random Thoughts.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: bilzrd
-github_username: bilzard
-
 # Build settings
 theme: minima
 plugins:
@@ -53,6 +50,9 @@ plugins:
 
 markdown: GFM # `kramdown` or `GFM`
 google_analytics: G-530W7ZYV8T
+twitter:
+  username: bilzrd
 github:
+  owner_name: bilzard
   repository_url: null
   is_project_page: false
