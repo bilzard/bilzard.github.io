@@ -24,7 +24,7 @@ task :post do
 layout: post
 title: #{title}
 date: #{timestamp}
-categories: [tech]
+categories: [blog]
 tags: []
 latex: true
 ---
