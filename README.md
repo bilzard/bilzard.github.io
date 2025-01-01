@@ -16,3 +16,4 @@ This project uses the following external resources:
 
 1. [jekyll](https://github.com/jekyll/jekyll) - MIT license
 1. [cayman-blog](https://github.com/lorepirri/cayman-blog) - CC0-1.0 license
+1. [jekyll-toc](https://github.com/allejo/jekyll-toc) - MIT license
