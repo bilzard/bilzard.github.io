@@ -27,6 +27,7 @@ date: #{timestamp}
 categories: [blog]
 tags: []
 latex: true
+toc: true
 ---
 EOS
     end
