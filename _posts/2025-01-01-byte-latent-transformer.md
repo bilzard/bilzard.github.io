@@ -5,6 +5,7 @@ date: 2025-01-01 15:14:14 +0900
 categories: [blog]
 tags: "学習ノート"
 latex: true
+toc: true
 ---
 
 Metaが2024年12月13日に公開した論文 "Byte Latent Transformer: Patches Scale Better Than Tokens" [Pagnoni, 2024] を読んだのでその内容をまとめます。
