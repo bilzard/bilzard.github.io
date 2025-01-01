@@ -50,6 +50,7 @@ plugins: []
 markdown: GFM # `kramdown` or `GFM`
 google_analytics: G-530W7ZYV8T
 twitter:
+  site: bilzard
   username: bilzrd
 github:
   owner_name: bilzard
