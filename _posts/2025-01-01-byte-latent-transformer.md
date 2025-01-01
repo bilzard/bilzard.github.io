@@ -3,7 +3,7 @@ layout: post
 title: "byte列を直接処理する言語モデル"
 date: 2025-01-01 15:14:14 +0900
 categories: blog
-tags: MLRandomThoughts
+tags: mlpaper LLM tokenizer
 latex: true
 toc: true
 ---
