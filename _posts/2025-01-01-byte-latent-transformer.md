@@ -91,7 +91,7 @@ $$
 したがって、このようなトークンの分割方法によらない評価指標として、Bits per bytes(BPB)という評価指標が提案されました[Choe, 2019]。
 
 $$
-\mathrm{BPB} = \frac{\mathcal{L} _ \mathrm{CrossEntropy}}{\log 2 \vert \mathrm{bytes} \vert} \tag{3}
+\mathrm{BPB} = \frac{\vert \mathrm{patches} \vert}{\log 2 \vert \mathrm{bytes} \vert} \mathcal{L} _ \mathrm{CrossEntropy}\tag{3}
 $$
 
 BPBはPPLを正規化した指標で、PPLにおけるトークンの区切りをbyte単位に統一したものとみなすことができます。
