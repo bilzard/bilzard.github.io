@@ -24,8 +24,8 @@ task :post do
 layout: post
 title: #{title}
 date: #{timestamp}
-categories: [blog]
-tags: []
+categories: blog
+tags: MLRandomThoughts
 latex: true
 toc: true
 ---
