@@ -519,33 +519,35 @@ a {
   margin-top: 2rem;
 }
 
-#toc {
-  border-radius: 0.5em;
-  padding: 1em;
-  box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.5);
-  margin-bottom: 2em;
-  padding-left: 0;
+/*
+ * Table of contents
+ */
+ul.toc {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1.5em;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-ul.toc {
-  list-style-type: none;
-  padding-left: 0;
-  > li {
-    margin-bottom: 0.5em;
-    > ul {
-      margin-left: 0.25em;
-      list-style-type: none;
-    }
-  }
+ul.toc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: $hr-border-color;
 }
-ul.toc li::before {
-  content: "-";
-  margin-right: 0.5em;
-  color: $section-headings-color;
+
+ul.toc a + ul {
+  margin-top: 0.25rem;
 }
+
 ul.toc li {
-  margin-bottom: 0.25em;
-  > a + ul {
-    margin-top: 0.25em;
-  }
+  margin-bottom: 0.25rem;
+}
+
+ul.toc li::marker {
+  color: $section-headings-color;
 }
