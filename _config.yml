@@ -53,6 +53,7 @@ twitter:
   site: bilzard
   username: bilzrd
   hashtags: [MLRandomThoughts]
+  summary_large_image: true
 github:
   owner_name: bilzard
   repository_url: null
