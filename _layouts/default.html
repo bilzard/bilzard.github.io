@@ -64,8 +64,20 @@
         {% assign page-tagline = page.tagline | escape  %}
         {% endif %}
 
+        <!-- define page icon -->
+        {% if page.icon %}
+            {% assign page-icon = page.icon %}
+        {% else if site.icon %}
+            {% assign page-icon = site.icon %}
+        {% else %}
+            {% assign page-icon = "" %}
+        {% endif %}
+
+        {% if page.layout == 'post' %}
+        {% assign page-tagline = page.tagline | escape  %}
+        {% endif %}
         <section class="page-header">
-            <h1 class="project-name">{{ page-title }}</h1>
+            <h1 class="project-name">{{ page-icon }} {{ page-title }}</h1>
             <h2 class="project-tagline">{{ page-tagline }}</h2>
             {% if page.layout == 'home' and site.github.is_project_page %}
             <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>

@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Bilzard's Blog 😗
+title: Bilzard's Blog
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   #MLRandomThoughts
@@ -62,3 +62,4 @@ github:
 kaggle:
   username: tatamikenn
 image: https://bilzard.github.io/assets/images/twitter_card_150x280.png
+icon: 😗
