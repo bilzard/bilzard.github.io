@@ -18,7 +18,7 @@ layout: default
   <div itemprop="articleBody">
     {% if page.toc  %}
       <h1>Table of Contents</h1>
-      {% include toc.html html=content %}
+      {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 %}
     {% endif %}
 
     {{ content }}

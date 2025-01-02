@@ -518,3 +518,34 @@ a {
 .sns-share-buttons {
   margin-top: 2rem;
 }
+
+#toc {
+  border-radius: 0.5em;
+  padding: 1em;
+  box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.5);
+  margin-bottom: 2em;
+  padding-left: 0;
+}
+
+ul.toc {
+  list-style-type: none;
+  padding-left: 0;
+  > li {
+    margin-bottom: 0.5em;
+    > ul {
+      margin-left: 0.25em;
+      list-style-type: none;
+    }
+  }
+}
+ul.toc li::before {
+  content: "-";
+  margin-right: 0.5em;
+  color: $section-headings-color;
+}
+ul.toc li {
+  margin-bottom: 0.25em;
+  > a + ul {
+    margin-top: 0.25em;
+  }
+}
