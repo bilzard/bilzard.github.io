@@ -6,7 +6,7 @@ ref: profile
 order: 0
 ---
 
-<img src="{{ "/assets/images/profile.jpg" | relative_url }}" alt="Profile Image" class="profile-image">
+<img src="{{ "/assets/images/profile.png" | relative_url }}" alt="Profile Image" class="profile-image">
 
 Machine learning engineer / Kaggle Master
 
