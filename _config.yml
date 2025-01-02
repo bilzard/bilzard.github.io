@@ -59,6 +59,8 @@ github:
   owner_name: bilzard
   repository_url: null
   is_project_page: false
+bluesky:
+  username: bilzard.bsky.social
 kaggle:
   username: tatamikenn
 image: https://bilzard.github.io/assets/images/twitter_card_emoji_1120x600.png

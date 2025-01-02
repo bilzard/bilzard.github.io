@@ -10,6 +10,7 @@ order: 0
 
 Machine learning engineer / Kaggle Master
 
-- Twitter: [@bilzrd](https://x.com/bilzrd)
-- GitHub: [@bilzard](https://github.com/bilzard)
-- Kaggle: [@tatamikenn](https://kaggle.com/tatamikenn)
+- X: [@{{ site.twitter.username }}](https://x.com/{{ site.twitter.username }})
+- Bluesky: [@{{ site.bluesky.username }}](https://bsky.app/profile/{{ site.bluesky.username }})
+- GitHub: [@{{ site.github.owner_name }}](https://github.com/{{ site.github.owner_name }})
+- Kaggle: [@{{ site.kaggle.username }}](https://kaggle.com/{{ site.kaggle.username }})
