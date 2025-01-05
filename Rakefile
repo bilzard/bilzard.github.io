@@ -25,7 +25,7 @@ layout: post
 title: #{title}
 date: #{timestamp}
 categories: blog
-tags: MLRandomThoughts
+tags:
 latex: true
 toc: true
 ---
