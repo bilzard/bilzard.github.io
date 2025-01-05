@@ -23,7 +23,7 @@ email:
 description: >- # this means to ignore newlines until "baseurl:"
   #MLRandomThoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bilzard.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
 theme: minima
 plugins:
@@ -64,5 +64,5 @@ bluesky:
   username: bilzard.bsky.social
 kaggle:
   username: tatamikenn
-image: https://bilzard.github.io/assets/images/twitter_card_site_1120x600_tag.png
+image: /assets/images/twitter_card_site_1120x600_tag.png
 icon: 😗
