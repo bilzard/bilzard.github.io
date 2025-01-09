@@ -29,3 +29,11 @@
     @include relative-font-size(1.25);
     font-weight: 600;
 }
+
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  min-width: 0 !important;
+}
