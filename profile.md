@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Profile
-permalink: /profile/
+permalink: /profile
 ref: profile
 order: 0
 ---
