@@ -1,8 +1,6 @@
-/**
- * Site header
- */
 $nav-line-height: $base-line-height * $base-font-size * 2.25;
 
+/* --- Header --- */
 .site-header {
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
@@ -80,7 +78,7 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
     .page-link {
       display: block;
       padding: 10px;
-      margin: 0 10px; // 左右一括指定
+      margin: 0 10px;
 
       &:last-child {
         margin-bottom: 10px;
@@ -89,57 +87,246 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   }
 }
 
-/**
- * Main Content & Post List
- */
-.main-content {
-  // 記事本文内のリストのみに適用（クラスなしのulに限定）
-  ul:not([class]), ol:not([class]) {
-    li { margin-left: 1.5rem; }
+.page-header {
+  color: $header-heading-color;
+  text-align: center;
+  background-color: $header-bg-color;
+  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+
+  @include large { padding: 5rem 6rem; }
+  @include medium { padding: 3rem 4rem; }
+  @include small { padding: 2rem 1rem; }
+
+  h1, h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
-.post-list {
-  margin-left: 0;
-  list-style: none;
+/* --- Main Content Area --- */
+.main-content {
+  word-wrap: break-word;
 
-  @include media-query($on-palm) {
-    padding: 0 10px; // -webkit- プレフィックスなしの標準プロパティ推奨
+  > :first-child { margin-top: 0; }
+
+  @include large {
+    max-width: 75rem;
+    padding: 3rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  @include medium { padding: 3rem 4rem; font-size: 1.1rem; }
+  @include small { padding: 2rem 1rem; font-size: 1rem; }
+
+  // 記事本文内のリストのみに適用
+  ul:not([class]), ol:not([class]) {
+    padding-left: 2rem;
+    margin: 0 0 1rem;
+    li { margin-bottom: 0.5rem; }
   }
 
-  > li {
-    margin-bottom: $spacing-unit * 1.5;
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: $section-headings-color;
+    font-weight: bold;
+  }
 
-    > h2 {
-      margin: 0 0 0.4rem; // 上 左右 下 を一括指定
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.4em;
+  h1 { @include relative-font-size(1.7); }
+  h2 { @include relative-font-size(1.5); }
+  h3 { @include relative-font-size(1.3); }
+  h4 { @include relative-font-size(1.1); }
+
+  kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle;
+  }
+
+  img { max-width: 100%; }
+
+  blockquote {
+    padding: 0 1rem;
+    margin-left: 0;
+    color: $blockquote-text-color;
+    border-left: 0.3rem solid $border-color;
+
+    > :first-child { margin-top: 0; }
+    > :last-child { margin-bottom: 0; }
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+    -webkit-overflow-scrolling: touch;
+
+    th { font-weight: bold; }
+    th, td {
+      padding: 0.5rem 1rem;
+      border: 1px solid $table-border-color;
+    }
+  }
+
+  dl {
+    padding: 0;
+    dt {
+      padding: 0;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    dd {
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  hr {
+    height: 2px;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: $hr-border-color;
+    border: 0;
+  }
+
+  code {
+    padding: 2px 4px;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    color: $code-text-color;
+    background-color: $code-bg-color;
+    border-radius: 0.3rem;
+  }
+
+  pre, .highlight pre {
+    padding: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: $code-text-color;
+    word-wrap: normal;
+    background-color: $code-bg-color;
+    border: solid 1px $border-color;
+    border-radius: 0.3rem;
+    overflow: auto;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    -webkit-overflow-scrolling: touch;
+
+    > code, tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+      white-space: pre;
+
+      &:before, &:after { content: normal; }
+    }
+  }
+}
+
+/* --- 2 Column Layout (Post) --- */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include large {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.post-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.post-sidebar {
+  display: none;
+
+  @include large {
+    display: block;
+    width: 260px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .sidebar-toc-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $section-headings-color;
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+  }
+}
+
+/* --- Footer --- */
+.site-footer {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: solid 1px $hr-border-color;
+
+  @include small {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  @include medium { font-size: 1rem; }
+  @include large { font-size: 1rem; }
+
+  .site-footer-owner {
+    display: block;
+    font-weight: bold;
+  }
+
+  .site-footer-credits {
+    color: $blockquote-text-color;
+  }
+
+  .my-span-icon {
+    a { text-decoration: none; }
+    a:hover { text-decoration: none; }
+
+    @include large { padding: 0px 5px 0px 5px; }
+    @include medium { padding: 0px 10px 10px 10px; }
+    @include small { padding: 0px 10px 10px 10px; }
+  }
+
+  .my-svg-icon {
+    color: $body-text-color;
+    fill: $body-text-color;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      text-decoration: none;
+      color: $section-headings-color;
+      fill: $section-headings-color;
+      transform: scale(1.25);
+      transition: color .5s, transform .2s ease-out;
     }
 
-    > p { margin-top: 0; }
+    @include large { width: 28px; height: 28px; }
+    @include medium { width: 32px; height: 32px; }
+    @include small { width: 36px; height: 36px; }
   }
-}
-
-.post-draft-label {
-  color: #d73a49;
-  border: 1px solid #d73a49;
-  border-radius: 3px;
-  padding: 1px 4px;
-  font-size: 0.6em;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.post-link {
-  display: inline-block;
-  @include relative-font-size(1.5);
-}
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
 }

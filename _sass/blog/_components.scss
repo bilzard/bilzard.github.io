@@ -1,0 +1,235 @@
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  + .btn { margin-left: 1rem; }
+
+  @include large { padding: 0.75rem 1rem; }
+  @include medium { padding: 0.6rem 0.9rem; font-size: 0.9rem; }
+  @include small {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    + .btn { margin-top: 1rem; margin-left: 0; }
+  }
+}
+
+/* --- Tags --- */
+.tags {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #c0c0c0;
+  color: #333;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  margin-bottom: 0rem;
+  font-weight: normal;
+  opacity: 0.7;
+
+  @include large { font-size: 1.0rem; }
+  @include medium { font-size: 0.95rem; }
+  @include small { font-size: 0.75rem; }
+}
+
+/* --- Project Headers --- */
+.project-name {
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+  @include large { font-size: 3.25rem; }
+  @include medium { font-size: 2.25rem; }
+  @include small { font-size: 1.75rem; }
+}
+
+.project-tagline {
+  margin-bottom: 2rem;
+  font-weight: normal;
+  opacity: 0.7;
+  @include large { font-size: 1.25rem; }
+  @include medium { font-size: 1.15rem; }
+  @include small { font-size: 1rem; }
+}
+
+.project-date {
+  margin-bottom: 0rem;
+  font-weight: normal;
+  opacity: 0.7;
+  font-style: italic;
+  @include large { font-size: 1.0rem; }
+  @include medium { font-size: 0.95rem; }
+  @include small { font-size: 0.75rem; }
+}
+
+/* --- Post List (Home) --- */
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include media-query($on-palm) {
+    padding: 0 10px;
+  }
+
+  > li {
+    margin-bottom: $spacing-unit * 1.5;
+    font-weight: 500;
+
+    > h2 {
+      margin: 0 0 0.4rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4em;
+    }
+
+    > p { margin-top: 0; }
+  }
+}
+
+.post-link {
+  display: inline-block;
+  @include relative-font-size(1.25);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-draft-label {
+  color: #d73a49;
+  border: 1px solid #d73a49;
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.6em;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* --- Profile Image --- */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 1.5em 0;
+}
+
+/* --- Social Share --- */
+.sns-share-buttons {
+  margin-top: 2rem;
+}
+
+/* --- MathJax --- */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  min-width: 0 !important;
+}
+
+/* --- Compact Zenn-style Table of contents --- */
+ul.toc {
+  position: relative;
+  list-style: none !important;
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin-bottom: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    bottom: 1.5rem;
+    left: 0;
+    width: 2px;
+    background-color: #e1e7f0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+    margin-left: 0 !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0.6em;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border: 2px solid #b2c4df;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    > a {
+      font-weight: bold;
+      color: #333;
+      font-size: 0.95rem;
+      text-decoration: none;
+      &:hover {
+        color: $brand-color;
+        text-decoration: underline;
+      }
+    }
+
+    ul {
+      list-style: none !important;
+      padding-left: 0;
+      margin-top: 0.4rem;
+
+      li {
+        padding-left: 1rem;
+        margin-bottom: 0.4rem;
+
+        &::before {
+          width: 6px;
+          height: 6px;
+          left: -3px;
+          top: 0.7em;
+          background-color: #e1e7f0;
+          border: none;
+        }
+
+        a {
+          font-weight: normal;
+          color: #666;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

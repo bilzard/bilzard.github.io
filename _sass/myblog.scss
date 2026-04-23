@@ -1,0 +1,7 @@
+@import "normalize";
+@import "rouge-github";
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+// これ以降のすべての独自スタイルは blog.scss 経由で読み込まれます
+@import "blog";
