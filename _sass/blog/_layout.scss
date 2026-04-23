@@ -159,6 +159,10 @@
   padding: 0;
   box-shadow: none;
   border: none;
+
+  > *:first-child {
+    margin-top: 0 !important;
+  }
 }
 
 .post-header {
