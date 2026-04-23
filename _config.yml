@@ -53,7 +53,11 @@ exclude:
   - vendor/ruby/
   - Rakefile
 
-markdown: GFM # `kramdown` or `GFM`
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false # 改行を即座に <br> にしたくない場合は false
+  syntax_highlighter: rouge # コードハイライトを維持
 google_analytics: G-530W7ZYV8T
 twitter:
   site: bilzard
