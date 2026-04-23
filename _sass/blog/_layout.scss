@@ -93,12 +93,13 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
-  @include large { padding: 5rem 6rem; }
-  @include medium { padding: 3rem 4rem; }
-  @include small { padding: 2rem 1rem; }
+  /* paddingを大幅に削って高さを圧縮 */
+  @include large { padding: 2rem 4rem; }
+  @include medium { padding: 1.5rem 3rem; }
+  @include small { padding: 1.5rem 1rem; }
 
   h1, h2 {
-    margin-top: 0.5rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
   }
 }
@@ -126,10 +127,17 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 2rem;
+    margin-top: 2.5rem; /* 見出しの上の余白を少し広げると読みやすい */
     margin-bottom: 1rem;
-    color: $section-headings-color;
+    color: #222222; /* 青から濃いグレーに変更 */
     font-weight: bold;
+  }
+
+  /* H2にZenn風の下線を追加 */
+  h2 {
+    @include relative-font-size(1.5);
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
   }
 
   h1 { @include relative-font-size(1.7); }
@@ -239,6 +247,11 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
       &:before, &:after { content: normal; }
     }
   }
+
+  /* DRAFTバッジの下にある本文エリア（articleBody）の最初の要素の余白を消す */
+  [itemprop="articleBody"] > :first-child {
+    margin-top: 0 !important;
+  }
 }
 
 /* --- 2 Column Layout (Post) --- */
@@ -329,4 +342,27 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
     @include medium { width: 32px; height: 32px; }
     @include small { width: 36px; height: 36px; }
   }
+}
+
+/* 背景をZennのような薄いブルーグレーに */
+body {
+  background-color: #f4f6f9;
+}
+
+/* メインコンテンツを白いカードにする */
+.post-main {
+  flex: 1;
+  min-width: 0;
+  background-color: #ffffff;
+  padding: 2rem 3rem; /* 上のpaddingを3remから2remに少し減らす */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* サイドバーの目次も白いカードにする */
+.post-sidebar .sticky-wrapper {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }

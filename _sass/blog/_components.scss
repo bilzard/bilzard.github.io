@@ -159,38 +159,55 @@ mjx-container {
   min-width: 0 !important;
 }
 
-/* --- Compact Zenn-style Table of contents --- */
+/* --- Zenn-style Table of contents (Flat HTML & Clean CSS) --- */
 ul.toc {
   position: relative;
   list-style: none !important;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 0.5rem 0;
   margin-bottom: 2rem;
 
+  /* 共通の垂直ガイドライン */
   &::before {
     content: "";
     position: absolute;
-    top: 1rem;
-    bottom: 1.5rem;
-    left: 0;
+    top: 0.8rem;
+    bottom: 1rem;
+    left: 8px; /* 軸の中心は 9px */
     width: 2px;
-    background-color: #e1e7f0;
+    background-color: #e2e8f0;
+    z-index: 0;
   }
 
+  /* すべての項目(H2/H3)に共通の設定 */
   li {
     position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 0.6rem;
+    padding-left: 28px !important;
+    margin-bottom: 0.6rem !important; /* ★ここで指定した余白が、全要素間で完全に均一になります */
     margin-left: 0 !important;
+    line-height: 1.5;
 
+    > a {
+      display: inline;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $brand-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  /* H2用のスタイル (toc-level-2) */
+  li.toc-level-2 {
     &::before {
       content: "";
       position: absolute;
-      left: -5px;
-      top: 0.6em;
+      left: 4px; /* 軸中心(9px) - 半径(5px) = 4px */
+      top: 0.5em;
       width: 10px;
       height: 10px;
-      background-color: #fff;
-      border: 2px solid #b2c4df;
+      background-color: #8bb4f7;
       border-radius: 50%;
       z-index: 1;
     }
@@ -199,37 +216,27 @@ ul.toc {
       font-weight: bold;
       color: #333;
       font-size: 0.95rem;
-      text-decoration: none;
-      &:hover {
-        color: $brand-color;
-        text-decoration: underline;
-      }
+    }
+  }
+
+  /* H3用のスタイル (toc-level-3) */
+  li.toc-level-3 {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 6px; /* 軸中心(9px) - 半径(3px) = 6px */
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      background-color: #cbd5e1;
+      border-radius: 50%;
+      z-index: 1;
     }
 
-    ul {
-      list-style: none !important;
-      padding-left: 0;
-      margin-top: 0.4rem;
-
-      li {
-        padding-left: 1rem;
-        margin-bottom: 0.4rem;
-
-        &::before {
-          width: 6px;
-          height: 6px;
-          left: -3px;
-          top: 0.7em;
-          background-color: #e1e7f0;
-          border: none;
-        }
-
-        a {
-          font-weight: normal;
-          color: #666;
-          font-size: 0.85rem;
-        }
-      }
+    > a {
+      font-weight: normal;
+      color: #475569;
+      font-size: 0.9rem;
     }
   }
 }

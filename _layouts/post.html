@@ -21,7 +21,7 @@ layout: default
     <aside class="post-sidebar">
       <div class="sticky-wrapper">
         <div class="sidebar-toc-title">目次</div>
-        {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 %}
+        {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 flat_toc=true item_class="toc-level-%level%" %}
       </div>
     </aside>
     {% endif %}
