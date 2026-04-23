@@ -30,6 +30,8 @@ tags:
 latex: true
 toc: true
 published: true
+excerpt: ""
+emoji: "😆"
 ---
 EOS
     end
