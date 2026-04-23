@@ -1,33 +1,31 @@
-<head>
-  {% comment %} 1. Google Analytics (元のレイアウトから移植) {% endcomment %}
-  {% if site.google_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ site.google_analytics }}');
-  </script>
-  {% endif %}
+{% comment %} 1. Google Analytics (元のレイアウトから移植) {% endcomment %}
+{% if site.google_analytics %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
 
-  {% comment %} 2. 基本のメタタグ {% endcomment %}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#157878">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+{% comment %} 2. 基本のメタタグ {% endcomment %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#157878">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>{{ page.title | default: site.title | escape }}</title>
+<title>{{ page.title | default: site.title | escape }}</title>
 
-  {% comment %} 3. ★ここが重要：OGP画像の計算と出力 {% endcomment %}
-  {% include logic/og-image-resolver.html %}
-  {% include social-metatags.html %}
+{% comment %} 3. ★ここが重要：OGP画像の計算と出力 {% endcomment %}
+{% include logic/og-image-resolver.html %}
+{% include social-metatags.html %}
 
-  {% comment %} 4. その他必要なリンク設定 {% endcomment %}
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="icon" href="{{ 'favicon.ico?v=3' | absolute_url }}" type="image/x-icon">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | absolute_url }}">
+{% comment %} 4. その他必要なリンク設定 {% endcomment %}
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<link rel="icon" href="{{ 'favicon.ico?v=3' | absolute_url }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | absolute_url }}">
 
-  {% comment %} 5. MathJax (元のレイアウトから移植) {% endcomment %}
-  {% include head-mathjax.html %}
-</head>
+{% comment %} 5. MathJax (元のレイアウトから移植) {% endcomment %}
+{% include head-mathjax.html %}
