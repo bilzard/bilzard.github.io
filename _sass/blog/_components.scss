@@ -159,30 +159,29 @@ mjx-container {
   min-width: 0 !important;
 }
 
-/* --- Zenn-style Table of contents (Flat HTML & Clean CSS) --- */
+/* --- Zenn-style Table of contents (Theme Harmonized) --- */
 ul.toc {
   position: relative;
   list-style: none !important;
   padding: 0.5rem 0;
   margin-bottom: 2rem;
 
-  /* 共通の垂直ガイドライン */
+  /* 共通の垂直ガイドライン（テーマのボーダーカラー） */
   &::before {
     content: "";
     position: absolute;
     top: 0.8rem;
     bottom: 1rem;
-    left: 8px; /* 軸の中心は 9px */
+    left: 8px;
     width: 2px;
-    background-color: #e2e8f0;
+    background-color: $border-color; /* ★テーマ変数に変更 */
     z-index: 0;
   }
 
-  /* すべての項目(H2/H3)に共通の設定 */
   li {
     position: relative;
     padding-left: 28px !important;
-    margin-bottom: 0.6rem !important; /* ★ここで指定した余白が、全要素間で完全に均一になります */
+    margin-bottom: 0.6rem !important;
     margin-left: 0 !important;
     line-height: 1.5;
 
@@ -192,50 +191,50 @@ ul.toc {
       transition: color 0.2s ease;
 
       &:hover {
-        color: $brand-color;
+        color: $body-link-color; /* ★テーマのリンクカラー */
         text-decoration: none;
       }
     }
   }
 
-  /* H2用のスタイル (toc-level-2) */
+  /* H2用のスタイル */
   li.toc-level-2 {
     &::before {
       content: "";
       position: absolute;
-      left: 4px; /* 軸中心(9px) - 半径(5px) = 4px */
+      left: 4px;
       top: 0.5em;
       width: 10px;
       height: 10px;
-      background-color: #8bb4f7;
+      background-color: $section-headings-color; /* ★テーマの見出しカラー（アクセント） */
       border-radius: 50%;
       z-index: 1;
     }
 
     > a {
       font-weight: bold;
-      color: #333;
+      color: darken($body-text-color, 15%); /* ベーステキストより少し濃く */
       font-size: 0.95rem;
     }
   }
 
-  /* H3用のスタイル (toc-level-3) */
+  /* H3用のスタイル */
   li.toc-level-3 {
     &::before {
       content: "";
       position: absolute;
-      left: 6px; /* 軸中心(9px) - 半径(3px) = 6px */
+      left: 6px;
       top: 0.6em;
       width: 6px;
       height: 6px;
-      background-color: #cbd5e1;
+      background-color: darken($border-color, 5%); /* ★ガイドラインより僅かに濃い色 */
       border-radius: 50%;
       z-index: 1;
     }
 
     > a {
       font-weight: normal;
-      color: #475569;
+      color: $body-text-color; /* ★テーマのベーステキストカラー */
       font-size: 0.9rem;
     }
   }
