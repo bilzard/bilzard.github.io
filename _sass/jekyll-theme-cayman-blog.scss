@@ -419,6 +419,54 @@ a {
   }
 }
 
+/* 2カラムレイアウトの基本設定 */
+.post-container {
+  display: flex;
+  flex-direction: column; /* モバイルでは縦並び */
+  gap: 2rem;
+
+  @include large {
+    flex-direction: row; /* PCでは横並び */
+    align-items: flex-start; /* 中身の高さに関わらず上揃え */
+  }
+}
+
+.post-main {
+  flex: 1;
+  min-width: 0; /* 長いコードブロック等による突き抜け防止 */
+}
+
+/* サイドバーの固定設定 */
+.post-sidebar {
+  display: none; /* 小さい画面では目次を非表示（圧迫感解消） */
+
+  @include large {
+    display: block;
+    width: 260px; /* Zennに近い幅 */
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem; /* 画面上部からの固定位置 */
+    max-height: calc(100vh - 4rem); /* 画面を突き抜けないように */
+    overflow-y: auto; /* 目次が長すぎる場合は内部スクロール */
+  }
+
+  .sidebar-toc-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $section-headings-color;
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem; /* TOCの垂直線と位置を合わせる */
+  }
+}
+
+/* 横幅の拡張（オプション） */
+/* 2カラムにすると本文が狭く感じる場合、全体の最大幅を少し広げます */
+.main-content {
+  @include large {
+    max-width: 75rem; /* 64rem から拡張 */
+  }
+}
+
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
@@ -520,34 +568,74 @@ a {
 }
 
 /*
- * Table of contents
+ * Compact Zenn-style Table of contents
  */
 ul.toc {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 1.5em;
-  margin-bottom: 1.5rem;
   position: relative;
-}
+  list-style: none !important;
+  padding: 0.5rem 0 0.5rem 1rem; /* 親の余白を少し詰める */
+  margin-bottom: 2rem;
 
-ul.toc::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 5px;
-  background-color: $hr-border-color;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    bottom: 1.5rem;
+    left: 0;
+    width: 2px;
+    background-color: #e1e7f0;
+  }
 
-ul.toc a + ul {
-  margin-top: 0.25rem;
-}
+  li {
+    position: relative;
+    padding-left: 1.2rem; /* H2のテキスト開始位置を詰める (1.5rem -> 1.2rem) */
+    margin-bottom: 0.6rem;
+    margin-left: 0 !important;
 
-ul.toc li {
-  margin-bottom: 0.25rem;
-}
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px; /* 線の上にドットを正確に配置 */
+      top: 0.6em;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border: 2px solid #b2c4df;
+      border-radius: 50%;
+      z-index: 1;
+    }
 
-ul.toc li::marker {
-  color: $section-headings-color;
+    > a {
+      font-weight: bold;
+      color: #333;
+      font-size: 0.95rem; /* わずかに小さくして密度を上げる */
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none !important;
+      padding-left: 0; /* ネストしたul自体の余白は0にする */
+      margin-top: 0.4rem;
+
+      li {
+        padding-left: 1rem; /* H3のインデント幅 (1.2rem -> 1rem) */
+        margin-bottom: 0.4rem;
+
+        &::before {
+          width: 6px;
+          height: 6px;
+          left: -3px; /* 小さいドットも線の中央へ */
+          top: 0.7em;
+          background-color: #e1e7f0;
+          border: none;
+        }
+
+        a {
+          font-weight: normal;
+          color: #666;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
 }

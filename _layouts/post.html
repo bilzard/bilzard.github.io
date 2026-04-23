@@ -2,33 +2,28 @@
 layout: default
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-container">
+    <div class="post-main">
+      <div itemprop="articleBody">
+        {{ content }}
+      </div>
 
-  <!-- <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header> -->
+      <div class="sns-share-buttons">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-hashtags="{{ site.twitter.hashtags | join: "," }}" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
 
-  <div itemprop="articleBody">
-    {% if page.toc  %}
-      <h1>Table of Contents</h1>
-      {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 %}
+      {% if site.disqus.shortname %}
+        {% include disqus_comments.html %}
+      {% endif %}
+    </div>
+
+    {% if page.toc %}
+    <aside class="post-sidebar">
+      <div class="sticky-wrapper">
+        <div class="sidebar-toc-title">目次</div>
+        {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 %}
+      </div>
+    </aside>
     {% endif %}
-
-    {{ content }}
   </div>
-
-  <div class="sns-share-buttons">
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-hashtags="{{ site.twitter.hashtags | join: "," }}" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
 </article>
