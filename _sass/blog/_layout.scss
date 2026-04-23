@@ -123,32 +123,56 @@
   margin-left: 0;
   list-style: none;
 
-  > li {
-    margin-left: 0;
-    margin-bottom: $spacing-unit * 1.5;
-  }
-  > li > h2 {
-    margin-top: 0rem;
-    margin-bottom: 0.4rem;
-  }
-  > li > p {
-    margin-top: 0rem;
-  }
-}
-
-@include media-query($on-palm) {
-  .post-list {
+  // デバイスごとの余白調整もここにまとめると綺麗
+  @include media-query($on-palm) {
     -webkit-margin-end: 10px;
     -webkit-padding-start: 10px;
   }
+
+  > li {
+    margin-left: 0;
+    margin-bottom: $spacing-unit * 1.5;
+
+    > h2 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+
+      // ラベルを横並びにするための設定をここに統合
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4em;
+    }
+
+    > p {
+      margin-top: 0;
+    }
+  }
 }
 
+// DRAFTラベル専用の定義
+.post-draft-label {
+  color: #d73a49;
+  border: 1px solid #d73a49;
+  border-radius: 3px;
+  padding: 1px 4px;      /* 上下を少し削るとよりタイトになります */
+  font-size: 0.6em;
+  font-weight: bold;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1.2;      /* 行高を抑えて枠線の中央に文字が来るよう調整 */
+  text-transform: uppercase; /* 小文字で打っても大文字になるように設定 */
+}
+
+// 記事タイトルリンクの共通定義
+.post-link {
+  display: inline; // inline-block でもOK。DRAFTラベルと並ぶよう固定
+  @include relative-font-size(1.5);
+  margin-bottom: 0;
+}
+
+// メタ情報（日付など）
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
-}
-
-.post-link {
-  display: block;
-  @include relative-font-size(1.5);
 }
