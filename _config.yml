@@ -19,6 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: bilzard.make
+author: bilzard
+bio: >- # this means to ignore newlines until "baseurl:"
+  Machine Learning Engineer / Data Scientist / Kaggle Master
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   #MLRandomThoughts

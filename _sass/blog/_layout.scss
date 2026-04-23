@@ -326,21 +326,74 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   min-width: 0;
 }
 
-.post-sidebar {
-  display: none;
+/* 共通のカードスタイル */
+.profile-card, .toc-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0; /* くすみのない薄いグレー */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* 非常に繊細な影 */
+}
 
-  @include large {
-    display: block; width: 260px; flex-shrink: 0; position: sticky;
-    top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto;
+/* プロフィールカード固有 */
+.profile-card {
+  margin-bottom: 1rem; /* 次のカード（目次）との間隔 */
+  text-align: center;
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.75rem;
+    border: 3px solid #f8fafc;
+    object-fit: cover;
   }
 
-  .sidebar-toc-title {
-    font-size: 1.15rem;
-    font-weight: bold;
+  .profile-name {
+    font-weight: 800;
+    font-size: 1.1rem;
     color: $section-headings-color;
-    margin-bottom: 0.6rem; /* ★ 1remから0.6remへ詰める */
+    margin-bottom: 0.25rem;
+  }
+
+  .profile-bio {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+
+    a {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $body-link-color;
+      padding: 0.3rem 0.6rem;
+      background: #f1f5f9;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      &:hover {
+        background: #e2e8f0;
+        text-decoration: none;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+/* 目次カード固有（タイトルの余白などを再調整） */
+.toc-card {
+  .sidebar-toc-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: $section-headings-color;
+    margin-bottom: 0.75rem;
     padding-left: 4px;
-    letter-spacing: 0.05em;
   }
 }
 
@@ -410,10 +463,22 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* サイドバーの目次も白いカードにする */
-.post-sidebar .sticky-wrapper {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+.post-sidebar {
+  display: none;
+  @include large {
+    display: block;
+    width: 280px;
+    flex-shrink: 0;
+
+    /* ▼ 固定(Sticky)と高さ制限を完全に撤去 ▼ */
+    position: relative;
+    top: 0;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* ついでに、カード間の余白が少し詰まって見える場合はここを調整 */
+.profile-card {
+  margin-bottom: 1.5rem; /* TOCカードとの間隔を少し広げて独立感を出す */
 }

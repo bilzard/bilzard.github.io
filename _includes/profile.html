@@ -1,0 +1,12 @@
+<div class="profile-card">
+  <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="Profile" class="profile-avatar">
+  <div class="profile-info">
+    <div class="profile-name">{{ site.author }}</div>
+    <div class="profile-bio">{{ site.bio }}</div>
+    <div class="profile-links">
+      <a href="https://github.com/{{ site.github.owner_name }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/{{ site.twitter.username }}" target="_blank" rel="noopener">X</a>
+      <a href="https://kaggle.com/{{ site.kaggle.username }}" target="_blank" rel="noopener">Kaggle</a>
+    </div>
+  </div>
+</div>

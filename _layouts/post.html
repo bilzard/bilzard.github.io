@@ -35,13 +35,17 @@ layout: default
       {% endif %}
     </div>
 
-    {% if page.toc %}
     <aside class="post-sidebar">
       <div class="sticky-wrapper">
-        <div class="sidebar-toc-title">目次</div>
-        {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 flat_toc=true item_class="toc-level-%level%" %}
+        {% include profile.html %}
+
+        {% if page.toc %}
+        <div class="toc-card">
+          <div class="sidebar-toc-title">目次</div>
+          {% include toc.html html=content sanitize=true class="toc" id="toc" h_max=3 flat_toc=true item_class="toc-level-%level%" %}
+        </div>
+        {% endif %}
       </div>
     </aside>
-    {% endif %}
   </div>
 </article>

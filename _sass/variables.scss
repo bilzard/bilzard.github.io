@@ -9,15 +9,14 @@ $large-breakpoint:  1024px !default;
 $large-breakpoint: 64em !default;
 $medium-breakpoint: 42em !default;
 
-// Headers
-$header-heading-color: #fff !default;
-$header-bg-color: #1e6b8b !default;
-$header-bg-color-secondary: #571599 !default;
+// Headers - グラデーションをより現代的な配色に
+$header-bg-color: #3b82f6 !default;           // 明るい青
+$header-bg-color-secondary: #8b5cf6 !default; // 鮮やかな紫
 
-// Text
-$section-headings-color: #1e6b8b !default; // ブランドカラー（据え置き）
-$body-text-color: #4a5568 !default; // #606c71より少しモダンなスレートグレーへ微調整
-$body-link-color: #2b7c9f !default; // #1e6b8b と同じ色相で、少し明るくした色（統一感アップ）
+// Text - 青を少し明るく、グレーから濁りを取り除きます
+$section-headings-color: #243342 !default; // ほぼ黒に近いネイビー（信頼感）
+$body-text-color: #334155 !default;        // 鉄板のスレートグレー
+$body-link-color: #3b82f6 !default;        // 鮮やかなブルー（アクセント）
 $blockquote-text-color: #718096 !default;
 
 // Code
