@@ -24,7 +24,7 @@ bio: >- # this means to ignore newlines until "baseurl:"
   Machine Learning Engineer / Data Scientist / Kaggle Master
 email:
 description: >-
-  制作関連のブログ
+  Design, Code, and Craft.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bilzard.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
