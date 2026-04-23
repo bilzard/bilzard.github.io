@@ -16,14 +16,13 @@ layout: default
         {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
 
-          <!-- define page icon -->
-          {% if post.icon %}
-              {% assign icon = post.icon %}
+          {% if post.emoji %}
+              {% assign emoji = post.emoji %}
           {% else %}
-              {% assign icon = "" %}
+              {% assign emoji = "" %}
           {% endif %}
         <h2>
-          <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ icon }} {{ post.title | escape }}</a>
+          <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ emoji }} {{ post.title | escape }}</a>
         </h2>
 
         {{ post.excerpt | strip_html | normalize_whitespace | truncate: 100 }}

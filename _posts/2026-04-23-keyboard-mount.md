@@ -8,7 +8,7 @@ latex: true
 toc: true
 published: true
 excerpt: パームレスト一体型キーボードマウントをダイソーのヨガブロックから削り出して制作した記録。
-icon: "🛠️"
+emoji: "🛠️"
 ---
 
 ## 一言で
