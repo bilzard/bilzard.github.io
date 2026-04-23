@@ -139,18 +139,6 @@
   @include large { flex-direction: row; align-items: flex-start; padding: 0 2rem; }
 }
 
-/* 記事ページ用（左カラム全体を白いカードにする） */
-.post-main {
-  flex: 1;
-  min-width: 0;
-  background-color: $card-bg-color;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-
-  @include large { padding: 3rem 4rem; }
-}
 
 /* トップページ用（背景を透明にして中のリストカードを目立たせる） */
 .home-post-main {
@@ -185,10 +173,10 @@
 
 /* 記事本文エリア（外枠の設定は解除し、文字装飾のみ残す） */
 .main-content {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
   word-wrap: break-word;
 
   > :first-child { margin-top: 0; }
@@ -205,15 +193,6 @@
   table { display: block; width: 100%; overflow: auto; word-break: keep-all; th { font-weight: bold; } th, td { padding: 0.5rem 1rem; border: 1px solid $table-border-color; } }
   code { padding: 2px 4px; font-family: monospace; font-size: 0.9rem; color: $code-text-color; background-color: $code-bg-color; border-radius: 0.3rem; }
   pre, .highlight pre { padding: 1rem; background-color: $code-bg-color; border: 1px solid $border-color; border-radius: 8px; overflow: auto; font-size: 0.9rem; line-height: 1.5; }
-}
-
-/* --- Sidebar --- */
-.post-sidebar {
-  display: none;
-  @include large {
-    display: block; width: 280px; flex-shrink: 0;
-    position: relative; top: 0; max-height: none; overflow: visible;
-  }
 }
 
 /* フッター全体の余白を劇的に絞る */
@@ -245,5 +224,63 @@
 
   &:hover .rss-button {
     fill: #ff8c00;            // ホバー時はRSSオレンジ
+  }
+}
+
+/* ==========================================================================
+   2 Column Layout & Cards (整理後)
+   ========================================================================== */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: $container-gap;
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @include large { flex-direction: row; align-items: flex-start; padding: 0 2rem; }
+}
+
+
+/* コメント専用の微調整 */
+.comment-card {
+  margin-top: $container-gap;
+  padding: 2rem; // コメント欄は少し控えめなpaddingでもOK
+
+  .comment-title {
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.8rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    color: #333;
+  }
+}
+
+/* 記事本文とコメント欄を同じ「レール」に乗せる */
+.post-main,
+.comment-card {
+  width: 100%;
+  max-width: $post-max-width; // 50rem を共通使用
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #ffffff;  /* または $card-bg-color */
+  border: 1px solid #e2e8f0;  /* 枠線 */
+  border-radius: 0.75rem;     /* 角丸 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); /* 影 */
+
+  /* 角丸や余白も rem で統一するとさらに美しいです */
+  border-radius: 0.75rem;     // 12px相当
+  padding: 2rem 1.5rem;
+  @include large { padding: 3rem 4rem; }
+}
+
+/* サイドバーも rem で指定 */
+.post-sidebar {
+  display: none;
+  @include large {
+    display: block;
+    width: $sidebar-width;   // 18rem
+    flex-shrink: 0;
   }
 }
