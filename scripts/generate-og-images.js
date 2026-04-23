@@ -11,7 +11,14 @@ const path = require('path');
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage' // メモリ不足エラー防止のため追加を推奨
+    ]
+});
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 630 });
 
