@@ -1,0 +1,14 @@
+---
+layout: null
+permalink: /assets/og-data.json
+---
+[
+  {% for post in site.posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "emoji": {{ post.emoji | default: site.emoji | default: "📝" | jsonify }},
+    "filename": "{{ post.url | slugify }}.png",
+    "date": "{{ post.date | date: '%Y.%m.%d' }}"
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

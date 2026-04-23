@@ -1,0 +1,15 @@
+{% comment %}
+  OGP画像パスの計算ロジック
+  出力: {{ page_og_image }}
+{% endcomment %}
+
+{% assign page_og_image = nil %}
+
+{% if page.image %}
+  {% comment %} 1. ページ個別の手動指定を最優先 {% endcomment %}
+  {% assign page_og_image = page.image | absolute_url %}
+{% elsif page.layout == "post" %}
+  {% comment %} 2. 投稿ページなら自動生成画像 {% endcomment %}
+  {% assign og_filename = page.url | slugify | append: ".png" %}
+  {% assign page_og_image = "/assets/images/og/" | append: og_filename | absolute_url %}
+{% endif %}

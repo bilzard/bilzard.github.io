@@ -1,0 +1,23 @@
+{
+  "name": "bilzard.github.io",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for my personal blog hosted on GitHub Pages.",
+  "homepage": "https://github.com/bilzard/bilzard.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/bilzard/bilzard.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bilzard/bilzard.github.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "puppeteer": "^24.42.0"
+  }
+}
