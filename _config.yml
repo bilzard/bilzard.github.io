@@ -76,3 +76,4 @@ image: /assets/images/twitter_card_site_1120x600_tag.png
 emoji: 😗
 sass:
   quiet_deps: true # 外部ライブラリ（minima等）の警告を消す
+permalink: /blog/:title/
