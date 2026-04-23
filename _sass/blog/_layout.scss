@@ -275,21 +275,17 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   display: none;
 
   @include large {
-    display: block;
-    width: 260px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 2rem;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
+    display: block; width: 260px; flex-shrink: 0; position: sticky;
+    top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto;
   }
 
   .sidebar-toc-title {
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     font-weight: bold;
     color: $section-headings-color;
-    margin-bottom: 0.75rem;
-    padding-left: 1.2rem;
+    margin-bottom: 0.6rem; /* ★ 1remから0.6remへ詰める */
+    padding-left: 4px;
+    letter-spacing: 0.05em;
   }
 }
 

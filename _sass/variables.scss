@@ -8,10 +8,10 @@ $header-bg-color: #1e6b8b !default;
 $header-bg-color-secondary: #571599 !default;
 
 // Text
-$section-headings-color: #1e6b8b !default;
-$body-text-color: #606c71 !default;
-$body-link-color: #1e6bc0 !default;
-$blockquote-text-color: #819198 !default;
+$section-headings-color: #1e6b8b !default; // ブランドカラー（据え置き）
+$body-text-color: #4a5568 !default; // #606c71より少しモダンなスレートグレーへ微調整
+$body-link-color: #2b7c9f !default; // #1e6b8b と同じ色相で、少し明るくした色（統一感アップ）
+$blockquote-text-color: #718096 !default;
 
 // Code
 $code-bg-color: #f3f6fa !default;

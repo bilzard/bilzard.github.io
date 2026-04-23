@@ -163,27 +163,27 @@ mjx-container {
 ul.toc {
   position: relative;
   list-style: none !important;
-  padding: 0.5rem 0;
-  margin-bottom: 2rem;
+  padding: 0; /* ★ 0.5rem を廃止し、上部の不自然な空白を消去 */
+  margin-bottom: 0; /* ★ 2rem を廃止し、底辺の空きすぎを解消 */
 
-  /* 共通の垂直ガイドライン（テーマのボーダーカラー） */
+  /* 共通の垂直ガイドライン */
   &::before {
     content: "";
     position: absolute;
-    top: 0.8rem;
-    bottom: 1rem;
+    top: 0.5em; /* 上の線をドットの中心からスタート */
+    bottom: 0.5em; /* 下の線を最後のドットでピタリと止める */
     left: 8px;
     width: 2px;
-    background-color: $border-color; /* ★テーマ変数に変更 */
+    background-color: $border-color;
     z-index: 0;
   }
 
   li {
     position: relative;
     padding-left: 28px !important;
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 0.4rem !important; /* ★ 0.6rem -> 0.4rem へ。要素の密度を高める */
     margin-left: 0 !important;
-    line-height: 1.5;
+    line-height: 1.4; /* ★ 行間も1.5から少し引き締める */
 
     > a {
       display: inline;
