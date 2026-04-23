@@ -3,7 +3,7 @@ layout: post
 title: パームレスト一体型キーボードマウントの制作
 date: 2026-04-23 15:50:35 +0900
 categories: blog
-tags: 自作キーボード
+tags: 自作キーボード make
 latex: true
 toc: true
 published: true
