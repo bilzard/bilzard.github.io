@@ -29,6 +29,7 @@ categories: blog
 tags:
 latex: true
 toc: true
+published: true
 ---
 EOS
     end
