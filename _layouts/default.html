@@ -79,37 +79,6 @@
         {% if page.layout == 'post' %}
         {% assign page-tagline = page.tagline | escape  %}
         {% endif %}
-        <section class="page-header">
-            <h1 class="project-name">{{ emoji }} {{ page-title }}</h1>
-            <h2 class="project-tagline">{{ page-tagline }}</h2>
-            {% if page.layout == 'home' and site.github.is_project_page %}
-            <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-            {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
-            {% endif %}
-            {% endif %}
-            <!-- Post tagline -->
-            {% if page.layout == 'post' %}
-            <h2 class="project-date">
-                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                    {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-                    {{ page.date | date: date_format }}
-                </time>
-                {% assign page_author = page.author | default: site.author | default: nil | escape %}
-                {% if page_author %}
-                • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page_author }}</span></span>
-                {% endif %}
-            </h2>
-            <div class="tags">
-              {% for tag in page.tags %}
-                <span class="tag">#{{ tag }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
-            <!-- End: Post tagline -->
-        </section>
-
         <section class="main-content">
             {% if jekyll.environment == "development" and page.published == false %}
             <div style="background: #fff5b1; border: 1px solid #e2d100; color: #857000; padding: 10px; margin-bottom: 20px; text-align: center; font-weight: bold; border-radius: 5px;">

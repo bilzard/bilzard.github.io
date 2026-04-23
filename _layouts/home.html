@@ -1,18 +1,20 @@
 ---
 layout: default
 ---
-
-<div>
-
-  {{ content }}
-
+<header class="home-header">
+  {% if site.emoji %}
+    <div class="home-emoji">{{ site.emoji }}</div>
+  {% endif %}
+  <h1 class="home-title">{{ site.title | escape }}</h1>
+  <p class="home-tagline">{{ site.description | default: site.github.project_tagline | escape }}</p>
+</header>
+<div class="main-content"> {{ content }}
   <h2>Latest Posts</h2>
   <div>&nbsp;</div>
 
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-
         {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
 
@@ -35,5 +37,4 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-
 </div>

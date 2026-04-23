@@ -87,20 +87,63 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   }
 }
 
-.page-header {
-  color: $header-heading-color;
+/* --- Home Header (トップページ用: 少し華やかに) --- */
+.home-header {
   text-align: center;
-  background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  padding: 4rem 1rem 3rem;
+  background-color: #f8fafc; /* ごく薄いグレーで領域を分ける */
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 3rem;
 
-  /* paddingを大幅に削って高さを圧縮 */
-  @include large { padding: 2rem 4rem; }
-  @include medium { padding: 1.5rem 3rem; }
-  @include small { padding: 1.5rem 1rem; }
+  .home-emoji {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
 
-  h1, h2 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+  .home-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 0 0 0.5rem;
+  }
+
+  .home-tagline {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+  }
+}
+
+/* --- Post Header (記事ページ用: Zenn風にシンプルに) --- */
+.post-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  max-width: 50rem; /* タイトルが長すぎないように少し幅を絞る */
+  margin: 0 auto;
+
+  .post-title {
+    font-size: 2.2rem; /* H1より少し大きめ */
+    font-weight: bold;
+    color: #0f172a;
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+
+  .post-meta {
+    font-size: 0.95rem;
+    color: #64748b;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* 日付とタグの間隔 */
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.5rem;
+    .tag { margin: 0; } /* 既存のタグスタイルのmarginをリセット */
   }
 }
 
