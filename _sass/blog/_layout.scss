@@ -87,30 +87,34 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   }
 }
 
-/* --- Home Header (トップページ用: 少し華やかに) --- */
+/* --- Home Header (トップページ用: モダンなヒーローバナー) --- */
 .home-header {
   text-align: center;
-  padding: 4rem 1rem 3rem;
-  background-color: #f8fafc; /* ごく薄いグレーで領域を分ける */
-  border-bottom: 1px solid $border-color;
+  padding: 4rem 2rem;
+  /* ★ ご自身のテーマカラーで美しいグラデーションを描画 */
+  background: linear-gradient(135deg, $header-bg-color, $header-bg-color-secondary);
+  border-radius: 16px; /* ★ 角丸にしてカード感を出す */
   margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(87, 21, 153, 0.15); /* 紫色の柔らかい影 */
 
   .home-emoji {
-    font-size: 4rem;
+    font-size: 4.5rem;
     line-height: 1;
     margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); /* 絵文字を少し浮き立たせる */
   }
 
   .home-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1e293b;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff; /* ★ 背景が濃いので文字は白 */
     margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
   }
 
   .home-tagline {
-    font-size: 1.1rem;
-    color: #64748b;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85); /* 半透明の白で上品に */
     margin: 0;
   }
 }
@@ -150,13 +154,14 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
 /* --- Main Content Area --- */
 .main-content {
   word-wrap: break-word;
+  max-width: $content-width; /* ★ .wrapperと全く同じ変数で幅を制御 */
+  margin: 0 auto;
+  padding: 2rem 1rem; /* ★ スマホ用の左右余白 */
 
   > :first-child { margin-top: 0; }
 
   @include large {
-    max-width: 75rem;
-    padding: 3rem 6rem;
-    margin: 0 auto;
+    padding: 3rem 2rem; /* ★ PC用の左右余白（.wrapperと完全に一致させる） */
     font-size: 1.1rem;
   }
   @include medium { padding: 3rem 4rem; font-size: 1.1rem; }

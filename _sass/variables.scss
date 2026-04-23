@@ -1,3 +1,10 @@
+$content-width: 72rem !default; /* ★追加: サイト全体の統一最大幅(約1152px) */
+
+$on-palm:          38em !default;
+$on-laptop:        54em !default;
+$medium-breakpoint: 768px !default;
+$large-breakpoint:  1024px !default;
+
 // Breakpoints
 $large-breakpoint: 64em !default;
 $medium-breakpoint: 42em !default;

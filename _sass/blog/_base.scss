@@ -39,17 +39,16 @@ a {
 }
 
 .wrapper {
-  max-width: calc(#{$navbar-width} - (#{$spacing-unit} * 2));
+  max-width: $content-width; /* ★ 一元管理の変数に変更 */
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
+  padding-right: 1rem; /* ★ スマホ用の左右余白 */
+  padding-left: 1rem;
   @extend %clearfix;
 
-  @include media-query($on-laptop) {
-    max-width: calc(#{$navbar-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+  @include large {
+    padding-right: 2rem; /* ★ PC用の左右余白（main-contentと揃える） */
+    padding-left: 2rem;
   }
 }
 
