@@ -5,7 +5,6 @@
  {% assign page_title = site.title | escape %}
 {% endif %}
 
-
 {% if page.author.name %}
   {% assign page_author = page.author.name | default: nil | escape %}
   {% assign twitter_creator = page.twitter.username | default: site.twitter.site | default: nil | escape %}
@@ -39,12 +38,9 @@
 {%if page.categories.size > 0 %}
   <meta name="keywords" itemprop="categories" content="{{ page.categories | join: ', ' | escape  }}" />
 {%endif %}
-{%if page.category %}
-  <meta name="keywords" itemprop="category" content="{{ category | escape  }}" />
-{%endif %}
 
 <!-- Twitter Card data -->
-{% if site.twitter.summary_large_image %%}
+{% if site.twitter.summary_large_image %}
   <meta name="twitter:card" content="summary_large_image" />
 {% else %}
   <meta name="twitter:card" content="summary" />
@@ -101,8 +97,4 @@
   {% for category in page.categories %}
     <meta property="article:tag" content="{{ category | escape }}" />
   {% endfor %}
-{%endif %}
-
-{%if page.category %}
-  <meta property="article:tag" content="{{ category | escape }}" />
 {%endif %}
