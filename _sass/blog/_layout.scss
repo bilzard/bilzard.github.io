@@ -119,35 +119,42 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
   }
 }
 
-/* --- Post Header (記事ページ用: Zenn風にシンプルに) --- */
+/* --- Post Header (記事ページ用) --- */
 .post-header {
   text-align: center;
-  padding: 3rem 1rem 2rem;
-  max-width: 50rem; /* タイトルが長すぎないように少し幅を絞る */
+  padding: 3rem 2rem 2rem; /* ★ 左右のpaddingを2remにして.wrapperと合わせる */
+  max-width: $content-width; /* ★ 50remからサイト共通幅(72rem)に変更 */
   margin: 0 auto;
 
   .post-title {
-    font-size: 2.2rem; /* H1より少し大きめ */
+    /* タイトル自体の幅を少し絞って読みやすくしたい場合は、
+       h1自体にmax-widthをかけるのがプロの技です */
+    max-width: 54rem;
+    margin: 0 auto 1rem;
+
+    font-size: 2.2rem;
     font-weight: bold;
     color: #0f172a;
-    margin: 0 0 1rem;
-    line-height: 1.4;
+    line-height: 1.3;
   }
 
   .post-meta {
     font-size: 0.95rem;
     color: #64748b;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; /* 日付とタグの間隔 */
+    /* ★ display: flex を削除して、日付とタグが縦に並ぶようにする */
   }
 
+  /* ★ タグ群の設定を独立させる */
   .post-tags {
-    display: flex;
+    display: flex;           /* タグ同士は横に並べる */
+    justify-content: center; /* 中央揃え */
+    flex-wrap: wrap;
     gap: 0.5rem;
-    .tag { margin: 0; } /* 既存のタグスタイルのmarginをリセット */
+    margin-top: 0.75rem;     /* 日付との間の余白 */
+
+    .tag {
+      margin: 0;             /* 個別のタグの余白をリセット */
+    }
   }
 }
 
