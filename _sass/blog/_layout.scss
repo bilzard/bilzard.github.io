@@ -216,8 +216,33 @@
   }
 }
 
-/* --- Footer --- */
+/* フッター全体の余白を劇的に絞る */
 .site-footer {
-  padding: 2rem 0; margin-top: 3rem; border-top: solid 1px $hr-border-color; text-align: center;
-  font-size: 0.9rem; color: $grey-color;
+  padding: 1.5rem 0 !important; /* !importantでテーマの設定を上書き */
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+/* 著作権表示とアイコンの距離を縮める */
+.site-foot-note {
+  margin: 0 0 0.5rem 0;        // 下の余白を最小限に
+  color: #828282;
+  font-size: 0.8rem;
+}
+
+/* アイコンの色を確実に指定 */
+#RSSicon {
+  display: block;
+  margin: 0 auto;
+
+  .rss-button {
+    fill: #4f4f4f;            // 土台を濃いグレーに
+  }
+  .rss-symbol {
+    fill: #ffffff !important; // マークを「強制的に白」にする
+  }
+
+  &:hover .rss-button {
+    fill: #ff8c00;            // ホバー時はRSSオレンジ
+  }
 }

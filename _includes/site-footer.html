@@ -1,57 +1,20 @@
-<!-- SVG icons from https://iconmonstr.com -->
+<footer class="site-footer">
+  <div class="wrapper">
+    <p class="site-foot-note">
+      bilzard.make © {{ site.time | date: "%Y" }}. All rights reserved.
+    </p>
 
-<!-- Twitter icon -->
-<span class="my-span-icon">
-    <a href="https://twitter.com/{{ site.twitter.username }}" aria-label="{{ site.github.owner_name }}'s Twitter" title="{{ site.github.owner_name }}'s Twitter">
-        <svg width="24" height="24" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg">
-            <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="#4f4f4f"/>
-        </svg>
-    </a>
-</span>
-
-<!-- Github icon -->
-<span class="my-span-icon">
-    <a href="{{ site.github.owner_url }}" aria-label="{{ site.github.owner_name }}'s GitHub" title="{{ site.github.owner_name }}'s GitHub">
-        <svg width="24" height="24", viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#4f4f4f"/>
-        </svg>
-    </a>
-</span>
-
-<!-- Kaggle icon -->
-<span class="my-span-icon">
-    <a href="https://www.kaggle.com/{{ site.kaggle.username }}" aria-label="{{ site.github.owner_name }}'s Kaggle" title="{{ site.github.owner_name }}'s Kaggle">
-        <svg width="24" height="24" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path d="M385.708,476.478L254.742,313.713l125.578-121.534c2.334-2.426,1.526-9.433-4.761-9.433h-62.16 c-3.145,0-6.288,1.618-9.433,4.761L185.128,307.604V32.738c0-4.491-2.247-6.737-6.738-6.737h-46.618 c-4.492,0-6.737,2.246-6.737,6.737v446.433c0,4.491,2.246,6.738,6.737,6.738h46.618c4.491,0,6.738-2.247,6.738-6.738v-97.91 l27.666-26.317l99.257,126.294c2.695,3.145,5.839,4.762,9.432,4.762h60.095c3.143,0,4.939-0.899,5.389-2.696L385.708,476.478z" fill="#4f4f4f";/>
-        </svg>
-    </a>
-</span>
-
-<!-- RSS icon -->
-{% if site.plugins contains "jekyll-feed" %}
-<span class="my-span-icon">
-    <a href="{{ "/feed.xml" | absolute_url }}" aria-label="RSS feed" title="{{ site.github.owner_name }}'s RSS feed">
-        <svg xmlns="http://www.w3.org/2000/svg" id="RSSicon" viewBox="0 0 8 8" width="24" height="24">
-            <title>RSS feed icon</title>
-            <style type="text/css">
-            .button {stroke: none; fill: #4f4f4f;}
-            .symbol {stroke: none; fill: white;}
-            </style>
-            <rect class="button" width="8" height="8" rx="1.5"/>
-            <circle class="symbol" cx="2" cy="6" r="1"/>
-            <path class="symbol" d="m 1,4 a 3,3 0 0 1 3,3 h 1 a 4,4 0 0 0 -4,-4 z"/>
-            <path class="symbol" d="m 1,2 a 5,5 0 0 1 5,5 h 1 a 6,6 0 0 0 -6,-6 z"/>
-        </svg>
-    </a>
-</span>
-{% endif %}
-
-<!-- Contact icon -->
-{% assign contact_page = site.pages | where: "path", "contact.md" | first %}
-{% if contact_page.title %}
-<span class="my-span-icon">
-    <a href="{{ contact_page.url | absolute_url }}" aria-label="Contact" title="Contact {{ site.github.owner_name }}">
-        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
-    </a>
-</span>
-{% endif %}
+    {% if site.plugins contains "jekyll-feed" %}
+    <div class="footer-icons">
+        <a href="{{ "/feed.xml" | absolute_url }}" aria-label="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" id="RSSicon" viewBox="0 0 8 8" width="24" height="24">
+                <rect class="rss-button" width="8" height="8" rx="1.5"/>
+                <circle class="rss-symbol" cx="2" cy="6" r="1"/>
+                <path class="rss-symbol" d="m 1,4 a 3,3 0 0 1 3,3 h 1 a 4,4 0 0 0 -4,-4 z"/>
+                <path class="rss-symbol" d="m 1,2 a 5,5 0 0 1 5,5 h 1 a 6,6 0 0 0 -6,-6 z"/>
+            </svg>
+        </a>
+    </div>
+    {% endif %}
+  </div>
+</footer>
