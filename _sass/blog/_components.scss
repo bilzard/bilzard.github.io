@@ -1,339 +1,79 @@
-/* --- Buttons --- */
-.btn {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 0.3rem;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-
-  &:hover {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  + .btn { margin-left: 1rem; }
-
-  @include large { padding: 0.75rem 1rem; }
-  @include medium { padding: 0.6rem 0.9rem; font-size: 0.9rem; }
-  @include small {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    + .btn { margin-top: 1rem; margin-left: 0; }
-  }
-}
-
 /* --- Tags --- */
-.tags {
-  margin: 1rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
+.tags { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
 .tag {
-  display: inline-block;
-  background-color: #c0c0c0;
-  color: #333;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  margin-bottom: 0rem;
-  font-weight: normal;
-  opacity: 0.7;
-
-  @include large { font-size: 1.0rem; }
-  @include medium { font-size: 0.95rem; }
-  @include small { font-size: 0.75rem; }
+  display: inline-block; background-color: #f1f5f9; color: #475569;
+  padding: 0.2rem 0.6rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.85rem;
 }
 
-/* --- Project Headers --- */
-.project-name {
-  margin-top: 0;
-  margin-bottom: 0.1rem;
-  @include large { font-size: 3.25rem; }
-  @include medium { font-size: 2.25rem; }
-  @include small { font-size: 1.75rem; }
-}
-
-.project-tagline {
-  margin-bottom: 2rem;
-  font-weight: normal;
-  opacity: 0.7;
-  @include large { font-size: 1.25rem; }
-  @include medium { font-size: 1.15rem; }
-  @include small { font-size: 1rem; }
-}
-
-.project-date {
-  margin-bottom: 0rem;
-  font-weight: normal;
-  opacity: 0.7;
-  font-style: italic;
-  @include large { font-size: 1.0rem; }
-  @include medium { font-size: 0.95rem; }
-  @include small { font-size: 0.75rem; }
-}
-
- /* --- Post Card List (Home / Monotonic Layered Design) --- */
+/* --- Post Card List (Home) --- */
 .post-list {
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  max-width: 50rem; /* 記事の本文エリアと幅を統一 */
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* カード同士の間隔 */
+  margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1rem;
 
   > li {
-    background: #ffffff; /* カードの背景は純白 */
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0; /* 薄いグレーの境界線 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); /* 繊細な影で浮遊感を出す */
+    background: $card-bg-color; padding: 1.5rem; border-radius: 12px;
+    border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    /* ホバー時にわずかに浮き上がる演出 */
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
-
-      .post-link {
-        color: $body-link-color !important; /* ホバー時のみ青くする */
-        text-decoration: underline;
-      }
+      transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+      .post-link { color: $body-link-color !important; text-decoration: underline; }
     }
 
-    /* 日付表示 */
-    .post-meta {
-      font-size: 0.85rem;
-      color: #94a3b8; /* テキストより薄いグレー */
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+    .post-meta { font-size: 0.85rem; color: $grey-color; display: block; margin-bottom: 0.5rem; }
 
-    /* タイトルエリア */
     h2 {
-      margin: 0 0 0.4rem;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
+      margin: 0 0 0.5rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;
       .post-link {
-        font-size: 1.35rem;
-        font-weight: 800;
-        color: #0f172a !important; /* ★ 記事リストのタイトルは黒（モノトーン） */
-        text-decoration: none;
-        transition: color 0.2s ease;
-        line-height: 1.3;
-      }
-
-      .post-emoji {
-        font-size: 1.2em;
+        font-size: 1.35rem; font-weight: 800; color: #0f172a !important;
+        text-decoration: none; line-height: 1.4; transition: color 0.2s ease;
       }
     }
 
-    /* 抜粋テキスト（要約） */
-    .post-excerpt {
-      font-size: 0.95rem;
-      color: #475569; /* 本文と同じスレートグレー */
-      line-height: 1.6;
-      margin: 0;
-    }
+    .post-excerpt { font-size: 0.95rem; color: #475569; line-height: 1.6; margin: 0; }
 
-    /* DRAFTラベル（Zenn風） */
     .post-draft-label {
-      color: #e53e3e;
-      border: 1px solid #fed7d7;
-      background-color: #fff5f5;
-      border-radius: 4px;
-      padding: 1px 6px;
-      font-size: 0.65rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      margin-left: 0.2rem;
+      color: #e53e3e; border: 1px solid #fed7d7; background-color: #fff5f5;
+      border-radius: 4px; padding: 1px 6px; font-size: 0.65rem; font-weight: bold; margin-left: 0.2rem;
     }
   }
 }
 
-/* モバイル対応：画面幅が狭いときは角丸を少し小さく、余白を調整 */
-@media screen and (max-width: $on-palm) {
-  .post-list {
-    padding: 0 1rem;
-    > li {
-      padding: 1.2rem;
-      border-radius: 12px;
+/* --- Sidebar Cards (Profile & TOC) --- */
+.profile-card, .toc-card {
+  background: $card-bg-color; border-radius: 12px; padding: 1.5rem;
+  border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  margin-bottom: 1.5rem;
+}
 
-      h2 .post-link {
-        font-size: 1.2rem;
-      }
-    }
+/* Profile Specific */
+.profile-card {
+  text-align: center;
+  .profile-avatar { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 0.75rem; border: 2px solid #f8fafc; }
+  .profile-name { font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.25rem; }
+  .profile-bio { font-size: 0.85rem; color: #64748b; margin-bottom: 1rem; line-height: 1.4; }
+  .profile-links {
+    display: flex; justify-content: center; gap: 0.5rem;
+    a { font-size: 0.75rem; font-weight: 600; color: $body-link-color; padding: 0.3rem 0.6rem; background: #f1f5f9; border-radius: 6px; transition: all 0.2s; }
+    a:hover { background: #e2e8f0; text-decoration: none; }
   }
 }
 
-/* 「Latest Posts」の文字を少し控えめにする */
-.main-content > h2 {
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 2rem;
+/* TOC Specific */
+.toc-card {
+  .sidebar-toc-title { font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; }
 }
-
-.post-link {
-  display: inline-block;
-  font-size: 1.6rem; /* 以前より少し大きく */
-  font-weight: 800;
-  color: #1a202c; /* チャコール */
-  text-decoration: none;
-  line-height: 1.3;
-
-  &:hover {
-    color: $body-link-color; /* 青 */
-    text-decoration: underline;
-  }
-}
-
-/* トップページの「Latest Posts」見出しも中央揃えにする */
-.main-content > h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  color: $section-headings-color;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-draft-label {
-  color: #d73a49;
-  border: 1px solid #d73a49;
-  border-radius: 3px;
-  padding: 1px 4px;
-  font-size: 0.6em;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-/* --- Profile Image --- */
-.profile-image {
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 1.5em 0;
-}
-
-/* --- Social Share --- */
-.sns-share-buttons {
-  margin-top: 2rem;
-}
-
-/* --- MathJax --- */
-mjx-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  max-width: 100%;
-  min-width: 0 !important;
-}
-
-/* --- Zenn-style Table of contents (Theme Harmonized) --- */
 ul.toc {
-  position: relative;
-  list-style: none !important;
-  padding: 0; /* ★ 0.5rem を廃止し、上部の不自然な空白を消去 */
-  margin-bottom: 0; /* ★ 2rem を廃止し、底辺の空きすぎを解消 */
-
-  /* 共通の垂直ガイドライン */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0.5em; /* 上の線をドットの中心からスタート */
-    bottom: 0.5em; /* 下の線を最後のドットでピタリと止める */
-    left: 8px;
-    width: 2px;
-    background-color: $border-color;
-    z-index: 0;
-  }
-
+  position: relative; list-style: none !important; padding: 0; margin-bottom: 0;
+  &::before { content: ""; position: absolute; top: 0.5em; bottom: 0.5em; left: 8px; width: 2px; background-color: $border-color; }
   li {
-    position: relative;
-    padding-left: 28px !important;
-    margin-bottom: 0.4rem !important; /* ★ 0.6rem -> 0.4rem へ。要素の密度を高める */
-    margin-left: 0 !important;
-    line-height: 1.4; /* ★ 行間も1.5から少し引き締める */
-
-    > a {
-      display: inline;
-      text-decoration: none;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: $body-link-color; /* ★テーマのリンクカラー */
-        text-decoration: none;
-      }
-    }
+    position: relative; padding-left: 28px !important; margin-bottom: 0.5rem !important; line-height: 1.4;
+    > a { font-size: 0.9rem; color: #334155; transition: color 0.2s; &:hover { color: $body-link-color; text-decoration: none; } }
   }
-
-  /* H2用のスタイル */
   li.toc-level-2 {
-    &::before {
-      content: "";
-      position: absolute;
-      left: 4px;
-      top: 0.5em;
-      width: 10px;
-      height: 10px;
-      background-color: $section-headings-color; /* ★テーマの見出しカラー（アクセント） */
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    > a {
-      font-weight: bold;
-      color: darken($body-text-color, 15%); /* ベーステキストより少し濃く */
-      font-size: 0.95rem;
-    }
+    &::before { content: ""; position: absolute; left: 4px; top: 0.5em; width: 10px; height: 10px; background-color: #0f172a; border-radius: 50%; z-index: 1; }
+    > a { font-weight: bold; color: #0f172a; }
   }
-
-  /* H3用のスタイル */
   li.toc-level-3 {
-    &::before {
-      content: "";
-      position: absolute;
-      left: 6px;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      background-color: darken($border-color, 5%); /* ★ガイドラインより僅かに濃い色 */
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    > a {
-      font-weight: normal;
-      color: $body-text-color; /* ★テーマのベーステキストカラー */
-      font-size: 0.9rem;
-    }
+    &::before { content: ""; position: absolute; left: 6px; top: 0.6em; width: 6px; height: 6px; background-color: #cbd5e1; border-radius: 50%; z-index: 1; }
   }
 }

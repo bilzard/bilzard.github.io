@@ -9,6 +9,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: $body-text-color;
+  background-color: $page-bg-color; /* 背景色 */
 }
 
 a {
@@ -20,34 +21,16 @@ a {
   }
 }
 
-#skip-to-content {
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  top: -10px;
-
-  &:focus {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    height: auto;
-    width: auto;
-    background: invert($body-link-color);
-    outline: thick solid invert($body-link-color);
-  }
-}
-
 .wrapper {
-  max-width: $content-width; /* ★ 一元管理の変数に変更 */
+  max-width: $content-width;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 1rem; /* ★ スマホ用の左右余白 */
+  padding-right: 1rem;
   padding-left: 1rem;
   @extend %clearfix;
 
   @include large {
-    padding-right: 2rem; /* ★ PC用の左右余白（main-contentと揃える） */
+    padding-right: 2rem;
     padding-left: 2rem;
   }
 }

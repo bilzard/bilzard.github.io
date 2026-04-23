@@ -1,38 +1,27 @@
-$content-width: 72rem !default; /* ★追加: サイト全体の統一最大幅(約1152px) */
+// Layout & Grid
+$content-width: 72rem !default;
 
 $on-palm:          38em !default;
-$on-laptop:        54em !default;
-$medium-breakpoint: 768px !default;
-$large-breakpoint:  1024px !default;
-
-// Breakpoints
-$large-breakpoint: 64em !default;
-$medium-breakpoint: 42em !default;
+$medium-breakpoint: 48em !default;
+$large-breakpoint:  64em !default;
 
 // Backgrounds
-$page-bg-color: #f8fafc !default;
-$card-bg-color: #ffffff !default;
+$page-bg-color: #f8fafc !default;   // 全体の背景（薄いグレー）
+$card-bg-color: #ffffff !default;   // カードの背景（真っ白）
 
-// Text - 澄んだスレートグレー
+// Text Colors
 $section-headings-color: #0f172a !default;
 $body-text-color: #334155 !default;
 $blockquote-text-color: #64748b !default;
 $body-link-color: #1a7ae2 !default;
+$grey-color: #94a3b8 !default;
 
-// ホバー時の色：少しだけ明るくするか、濃い黒にする
-$link-hover-color: #0f172a;
-
-// Headers
+// Headers & Borders
 $header-heading-color: #0f172a !default;
-$header-bg-color: #ffffff !default;
-$header-border-color: #f1f5f9 !default;
-$header-bg-color-secondary: #000000 !default;
+$border-color: #f1f5f9 !default;
+$table-border-color: #e2e8f0 !default;
+$hr-border-color: #f1f5f9 !default;
 
 // Code
-$code-bg-color: #f3f6fa !default;
-$code-text-color: #567482 !default;
-
-// Borders
-$border-color: #f1f5f9 !default;
-$table-border-color: #e9ebec !default;
-$hr-border-color: #eff0f1 !default;
+$code-bg-color: #f1f5f9 !default;
+$code-text-color: #475569 !default;

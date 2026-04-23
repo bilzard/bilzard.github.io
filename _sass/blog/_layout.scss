@@ -1,52 +1,59 @@
-$nav-line-height: $base-line-height * $base-font-size * 2.25;
-
-/* --- Header --- */
+/* ==========================================================================
+   Global Navigation Header
+   ========================================================================== */
 .site-header {
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
+  border-bottom: 1px solid $border-color;
+  min-height: 56px;
   position: relative;
+  background-color: #ffffff; /* 白背景で統一 */
 }
 
 .site-title {
-  @include relative-font-size(1.4);
-  font-weight: 300;
-  line-height: $nav-line-height;
-  letter-spacing: -1px;
+  font-size: 1.4rem;
+  font-weight: 800; /* ロゴっぽく太字に */
+  line-height: 56px;
+  letter-spacing: -0.05em;
   margin-bottom: 0;
   float: left;
 
   &, &:visited, &:hover {
-    color: $text-color;
+    color: #0f172a;
     text-decoration: none;
   }
 }
 
 .site-nav {
   float: right;
-  line-height: $nav-line-height;
+  line-height: 56px;
 
   .nav-trigger, .menu-icon {
     display: none;
   }
 
   .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
+    color: #475569;
+    font-weight: 600;
 
     &:not(:last-child) {
       margin-right: 20px;
     }
+
+    &:hover {
+      color: $body-link-color;
+      text-decoration: none;
+    }
   }
 
-  @include media-query($on-palm) {
+  @include small {
     position: absolute;
     top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
+    right: 1rem;
+    background-color: #ffffff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
     text-align: right;
     z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 
     label[for="nav-trigger"] {
       display: block;
@@ -64,7 +71,7 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
       line-height: 0;
       padding-top: 10px;
 
-      > svg path { fill: $grey-color-dark; }
+      > svg path { fill: #0f172a; }
     }
 
     input ~ .trigger { display: none; }
@@ -86,432 +93,127 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
     }
   }
 }
-/* --- Home Header (Compact & Centered) --- */
+
+/* ==========================================================================
+   Home Header & Lists
+   ========================================================================== */
 .home-header {
   text-align: center;
-  /* 天井との隙間を最小(1rem)にし、下方向も詰め気味に */
-  padding: 1rem 0 0.5rem;
+  padding: 2rem 0 1rem;
   max-width: $content-width;
   margin: 0 auto;
-  background: transparent !important; /* 背景色を完全に抜く */
+  background: transparent;
 
-  .home-emoji {
-    font-size: 3.5rem;
-    margin-bottom: 0.25rem;
-  }
-
+  .home-emoji { font-size: 3.5rem; margin-bottom: 0.25rem; }
   .home-title {
-    font-size: 2.2rem;
-    font-weight: 850;
-    color: #0f172a;
-    margin: 0;
-    letter-spacing: -0.04em;
-    background: none !important;
-    -webkit-text-fill-color: initial !important;
+    font-size: 2.2rem; font-weight: 850; color: #0f172a;
+    margin: 0; letter-spacing: -0.04em;
   }
-
   .home-tagline {
-    font-size: 0.95rem;
-    margin-top: 0.25rem;
-    color: #64748b;
-    opacity: 0.8;
+    font-size: 0.95rem; margin-top: 0.25rem; color: #64748b;
   }
 }
 
-/* --- Latest Posts Title (Spacing Fix) --- */
 .latest-title {
-  text-align: left; /* Zenn風に左寄せ */
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  /* タイトルと線、カードとの距離を極限まで詰める */
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 0.5rem;
-}
-
-/* --- Latest Posts Title (密度アップ) --- */
-.latest-title {
-  text-align: center; /* ヘッダーに合わせて中央揃え */
+  text-align: center;
   font-size: 0.85rem;
   font-weight: bold;
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-
-  /* ★ タイトルと下の線の間隔を詰める */
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-
-  /* 線を入れる場合は、ここでコントロール */
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 0.75rem;
+  margin: 1.5rem 0 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
 }
 
-/* --- Post Header (記事ページ用) --- */
-.post-header {
-  text-align: center;
-  padding: 3rem 2rem 2rem; /* ★ 左右のpaddingを2remにして.wrapperと合わせる */
-  max-width: $content-width; /* ★ 50remからサイト共通幅(72rem)に変更 */
-  margin: 0 auto;
-
-  .post-title {
-    /* タイトル自体の幅を少し絞って読みやすくしたい場合は、
-       h1自体にmax-widthをかけるのがプロの技です */
-    max-width: 54rem;
-    margin: 0 auto 1rem;
-
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #0f172a;
-    line-height: 1.3;
-  }
-
-  .post-meta {
-    font-size: 0.95rem;
-    color: #64748b;
-    /* ★ display: flex を削除して、日付とタグが縦に並ぶようにする */
-  }
-
-  /* ★ タグ群の設定を独立させる */
-  .post-tags {
-    display: flex;           /* タグ同士は横に並べる */
-    justify-content: center; /* 中央揃え */
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.75rem;     /* 日付との間の余白 */
-
-    .tag {
-      margin: 0;             /* 個別のタグの余白をリセット */
-    }
-  }
-}
-
-/* --- Main Content Area --- */
-.main-content {
-  word-wrap: break-word;
-  max-width: $content-width; /* ★ .wrapperと全く同じ変数で幅を制御 */
-  margin: 0 auto;
-  padding: 2rem 1rem; /* ★ スマホ用の左右余白 */
-
-  > :first-child { margin-top: 0; }
-
-  @include large {
-    padding: 3rem 2rem; /* ★ PC用の左右余白（.wrapperと完全に一致させる） */
-    font-size: 1.1rem;
-  }
-  @include medium { padding: 3rem 4rem; font-size: 1.1rem; }
-  @include small { padding: 2rem 1rem; font-size: 1rem; }
-
-  // 記事本文内のリストのみに適用
-  ul:not([class]), ol:not([class]) {
-    padding-left: 2rem;
-    margin: 0 0 1rem;
-    li { margin-bottom: 0.5rem; }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 2.5rem; /* 見出しの上の余白を少し広げると読みやすい */
-    margin-bottom: 1rem;
-    color: #222222; /* 青から濃いグレーに変更 */
-    font-weight: bold;
-  }
-
-  /* H2にZenn風の下線を追加 */
-  h2 {
-    @include relative-font-size(1.5);
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-  }
-
-  h1 { @include relative-font-size(1.7); }
-  h2 { @include relative-font-size(1.5); }
-  h3 { @include relative-font-size(1.3); }
-  h4 { @include relative-font-size(1.1); }
-
-  kbd {
-    background-color: #fafbfc;
-    border: 1px solid #c6cbd1;
-    border-bottom-color: #959da5;
-    border-radius: 3px;
-    box-shadow: inset 0 -1px 0 #959da5;
-    color: #444d56;
-    display: inline-block;
-    font-size: 11px;
-    line-height: 10px;
-    padding: 3px 5px;
-    vertical-align: middle;
-  }
-
-  img { max-width: 100%; }
-
-  blockquote {
-    padding: 0 1rem;
-    margin-left: 0;
-    color: $blockquote-text-color;
-    border-left: 0.3rem solid $border-color;
-
-    > :first-child { margin-top: 0; }
-    > :last-child { margin-bottom: 0; }
-  }
-
-  table {
-    display: block;
-    width: 100%;
-    overflow: auto;
-    word-break: normal;
-    word-break: keep-all;
-    -webkit-overflow-scrolling: touch;
-
-    th { font-weight: bold; }
-    th, td {
-      padding: 0.5rem 1rem;
-      border: 1px solid $table-border-color;
-    }
-  }
-
-  dl {
-    padding: 0;
-    dt {
-      padding: 0;
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-    dd {
-      padding: 0;
-      margin-bottom: 1rem;
-    }
-  }
-
-  hr {
-    height: 2px;
-    padding: 0;
-    margin: 1rem 0;
-    background-color: $hr-border-color;
-    border: 0;
-  }
-
-  code {
-    padding: 2px 4px;
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 0.9rem;
-    color: $code-text-color;
-    background-color: $code-bg-color;
-    border-radius: 0.3rem;
-  }
-
-  pre, .highlight pre {
-    padding: 0.8rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    color: $code-text-color;
-    word-wrap: normal;
-    background-color: $code-bg-color;
-    border: solid 1px $border-color;
-    border-radius: 0.3rem;
-    overflow: auto;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    -webkit-overflow-scrolling: touch;
-
-    > code, tt {
-      display: inline;
-      max-width: initial;
-      padding: 0;
-      margin: 0;
-      overflow: initial;
-      line-height: inherit;
-      word-wrap: normal;
-      background-color: transparent;
-      border: 0;
-      white-space: pre;
-
-      &:before, &:after { content: normal; }
-    }
-  }
-
-  /* DRAFTバッジの下にある本文エリア（articleBody）の最初の要素の余白を消す */
-  [itemprop="articleBody"] > :first-child {
-    margin-top: 0 !important;
-  }
-}
-
-/* --- 2 Column Layout (Post) --- */
+/* ==========================================================================
+   2 Column Layout & Cards
+   ========================================================================== */
 .post-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-  @include large {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @include large { flex-direction: row; align-items: flex-start; padding: 0 2rem; }
 }
 
+/* 記事ページ用（左カラム全体を白いカードにする） */
 .post-main {
   flex: 1;
   min-width: 0;
-}
-
-/* 共通のカードスタイル */
-.profile-card, .toc-card {
-  background: #ffffff;
+  background-color: $card-bg-color;
+  padding: 2rem 1.5rem;
   border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #e2e8f0; /* くすみのない薄いグレー */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* 非常に繊細な影 */
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+
+  @include large { padding: 3rem 4rem; }
 }
 
-/* プロフィールカード固有 */
-.profile-card {
-  margin-bottom: 1rem; /* 次のカード（目次）との間隔 */
+/* トップページ用（背景を透明にして中のリストカードを目立たせる） */
+.home-post-main {
+  flex: 1;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.post-header {
   text-align: center;
+  padding: 3rem 1rem 2rem; /* 天井からの余白を復活させる */
+  margin: 0 auto;
+  max-width: $content-width; /* ★ 画面幅いっぱいに広がらないよう、コンテンツ幅に固定 */
+  border-bottom: none; /* カード内用の区切り線を削除 */
 
-  .profile-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 0.75rem;
-    border: 3px solid #f8fafc;
-    object-fit: cover;
+  .post-title {
+    font-size: 2.2rem; font-weight: 800; color: #0f172a;
+    line-height: 1.4; margin-bottom: 0.75rem;
   }
-
-  .profile-name {
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: $section-headings-color;
-    margin-bottom: 0.25rem;
-  }
-
-  .profile-bio {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-  }
-
-  .profile-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-
-    a {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: $body-link-color;
-      padding: 0.3rem 0.6rem;
-      background: #f1f5f9;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      &:hover {
-        background: #e2e8f0;
-        text-decoration: none;
-        transform: translateY(-1px);
-      }
-    }
+  .post-meta { font-size: 0.95rem; color: #64748b; }
+  .post-tags {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem;
+    .tag { margin: 0; }
   }
 }
 
-/* 目次カード固有（タイトルの余白などを再調整） */
-.toc-card {
-  .sidebar-toc-title {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: $section-headings-color;
-    margin-bottom: 0.75rem;
-    padding-left: 4px;
+/* 記事本文エリア（外枠の設定は解除し、文字装飾のみ残す） */
+.main-content {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  word-wrap: break-word;
+
+  > :first-child { margin-top: 0; }
+  [itemprop="articleBody"] > :first-child { margin-top: 0 !important; }
+
+  ul:not([class]), ol:not([class]) { padding-left: 2rem; margin: 0 0 1rem; li { margin-bottom: 0.5rem; } }
+  h1, h2, h3, h4, h5, h6 { margin-top: 2.5rem; margin-bottom: 1rem; color: #222222; font-weight: bold; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+  h3 { font-size: 1.3rem; }
+
+  blockquote { padding: 0 1rem; margin-left: 0; color: $blockquote-text-color; border-left: 0.3rem solid $border-color; }
+  img { max-width: 100%; border-radius: 8px; }
+
+  table { display: block; width: 100%; overflow: auto; word-break: keep-all; th { font-weight: bold; } th, td { padding: 0.5rem 1rem; border: 1px solid $table-border-color; } }
+  code { padding: 2px 4px; font-family: monospace; font-size: 0.9rem; color: $code-text-color; background-color: $code-bg-color; border-radius: 0.3rem; }
+  pre, .highlight pre { padding: 1rem; background-color: $code-bg-color; border: 1px solid $border-color; border-radius: 8px; overflow: auto; font-size: 0.9rem; line-height: 1.5; }
+}
+
+/* --- Sidebar --- */
+.post-sidebar {
+  display: none;
+  @include large {
+    display: block; width: 280px; flex-shrink: 0;
+    position: relative; top: 0; max-height: none; overflow: visible;
   }
 }
 
 /* --- Footer --- */
 .site-footer {
-  padding-top: 2rem;
-  margin-top: 2rem;
-  border-top: solid 1px $hr-border-color;
-
-  @include small {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  @include medium { font-size: 1rem; }
-  @include large { font-size: 1rem; }
-
-  .site-footer-owner {
-    display: block;
-    font-weight: bold;
-  }
-
-  .site-footer-credits {
-    color: $blockquote-text-color;
-  }
-
-  .my-span-icon {
-    a { text-decoration: none; }
-    a:hover { text-decoration: none; }
-
-    @include large { padding: 0px 5px 0px 5px; }
-    @include medium { padding: 0px 10px 10px 10px; }
-    @include small { padding: 0px 10px 10px 10px; }
-  }
-
-  .my-svg-icon {
-    color: $body-text-color;
-    fill: $body-text-color;
-    width: 24px;
-    height: 24px;
-
-    &:hover {
-      text-decoration: none;
-      color: $section-headings-color;
-      fill: $section-headings-color;
-      transform: scale(1.25);
-      transition: color .5s, transform .2s ease-out;
-    }
-
-    @include large { width: 28px; height: 28px; }
-    @include medium { width: 32px; height: 32px; }
-    @include small { width: 36px; height: 36px; }
-  }
-}
-
-/* 背景をZennのような薄いブルーグレーに */
-body {
-  background-color: #f4f6f9;
-}
-
-/* メインコンテンツを白いカードにする */
-.post-main {
-  flex: 1;
-  min-width: 0;
-  background-color: #ffffff;
-  padding: 2rem 3rem; /* 上のpaddingを3remから2remに少し減らす */
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.post-sidebar {
-  display: none;
-  @include large {
-    display: block;
-    width: 280px;
-    flex-shrink: 0;
-
-    /* ▼ 固定(Sticky)と高さ制限を完全に撤去 ▼ */
-    position: relative;
-    top: 0;
-    max-height: none;
-    overflow: visible;
-  }
-}
-
-/* ついでに、カード間の余白が少し詰まって見える場合はここを調整 */
-.profile-card {
-  margin-bottom: 1.5rem; /* TOCカードとの間隔を少し広げて独立感を出す */
+  padding: 2rem 0; margin-top: 3rem; border-top: solid 1px $hr-border-color; text-align: center;
+  font-size: 0.9rem; color: $grey-color;
 }
