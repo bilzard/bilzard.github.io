@@ -7,6 +7,8 @@ tags: 自作キーボード make
 latex: true
 toc: true
 published: true
+excerpt: パームレスト一体型キーボードマウントをダイソーのヨガブロックから削り出して制作した記録。
+icon: "🛠️"
 ---
 
 ## 一言で
