@@ -13,3 +13,8 @@
   {% assign og_filename = page.url | slugify | append: ".png" %}
   {% assign page_og_image = "/assets/images/og/" | append: og_filename | absolute_url %}
 {% endif %}
+
+{% if page_og_image == nil %}
+  {% assign debug_msg = "DEBUG: resolver failed for " | append: page.url %}
+  {{ debug_msg | raise_error }}
+{% endif %}
