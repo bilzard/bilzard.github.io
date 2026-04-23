@@ -23,8 +23,8 @@ author: bilzard
 bio: >- # this means to ignore newlines until "baseurl:"
   Machine Learning Engineer / Data Scientist / Kaggle Master
 email:
-description: >- # this means to ignore newlines until "baseurl:"
-  #MLRandomThoughts
+description: >-
+  制作関連のブログ
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bilzard.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
@@ -58,7 +58,7 @@ google_analytics: G-530W7ZYV8T
 twitter:
   site: bilzard
   username: bilzrd
-  hashtags: [ MLRandomThoughts ]
+  hashtags: []
   summary_large_image: true
 github:
   owner_name: bilzard
