@@ -17,7 +17,7 @@ bundle install
 To start the Jekyll server and preview your blog locally:
 
 ```bash
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve --livereload --unpublished
 ```
 - Access via: `http://localhost:4000`
 

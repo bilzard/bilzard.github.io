@@ -111,6 +111,11 @@
         </section>
 
         <section class="main-content">
+            {% if jekyll.environment == "development" and page.published == false %}
+            <div style="background: #fff5b1; border: 1px solid #e2d100; color: #857000; padding: 10px; margin-bottom: 20px; text-align: center; font-weight: bold; border-radius: 5px;">
+                ⚠️ この記事は現在「published: false」です。本番環境（GitHub Pages）では閲覧できません。
+            </div>
+            {% endif %}
 
             {{ content }}
 
