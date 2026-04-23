@@ -9,21 +9,30 @@ $large-breakpoint:  1024px !default;
 $large-breakpoint: 64em !default;
 $medium-breakpoint: 42em !default;
 
-// Headers - グラデーションをより現代的な配色に
-$header-bg-color: #3b82f6 !default;           // 明るい青
-$header-bg-color-secondary: #8b5cf6 !default; // 鮮やかな紫
+// Backgrounds
+$page-bg-color: #f8fafc !default;
+$card-bg-color: #ffffff !default;
 
-// Text - 青を少し明るく、グレーから濁りを取り除きます
-$section-headings-color: #243342 !default; // ほぼ黒に近いネイビー（信頼感）
-$body-text-color: #334155 !default;        // 鉄板のスレートグレー
-$body-link-color: #3b82f6 !default;        // 鮮やかなブルー（アクセント）
-$blockquote-text-color: #718096 !default;
+// Text - 澄んだスレートグレー
+$section-headings-color: #0f172a !default;
+$body-text-color: #334155 !default;
+$blockquote-text-color: #64748b !default;
+$body-link-color: #1a7ae2 !default;
+
+// ホバー時の色：少しだけ明るくするか、濃い黒にする
+$link-hover-color: #0f172a;
+
+// Headers
+$header-heading-color: #0f172a !default;
+$header-bg-color: #ffffff !default;
+$header-border-color: #f1f5f9 !default;
+$header-bg-color-secondary: #000000 !default;
 
 // Code
 $code-bg-color: #f3f6fa !default;
 $code-text-color: #567482 !default;
 
 // Borders
-$border-color: #dce6f0 !default;
+$border-color: #f1f5f9 !default;
 $table-border-color: #e9ebec !default;
 $hr-border-color: #eff0f1 !default;

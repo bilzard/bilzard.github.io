@@ -86,37 +86,70 @@ $nav-line-height: $base-line-height * $base-font-size * 2.25;
     }
   }
 }
-
-/* --- Home Header (トップページ用: モダンなヒーローバナー) --- */
+/* --- Home Header (Compact & Centered) --- */
 .home-header {
   text-align: center;
-  padding: 4rem 2rem;
-  /* ★ ご自身のテーマカラーで美しいグラデーションを描画 */
-  background: linear-gradient(135deg, $header-bg-color, $header-bg-color-secondary);
-  border-radius: 16px; /* ★ 角丸にしてカード感を出す */
-  margin-bottom: 3rem;
-  box-shadow: 0 10px 30px rgba(87, 21, 153, 0.15); /* 紫色の柔らかい影 */
+  /* 天井との隙間を最小(1rem)にし、下方向も詰め気味に */
+  padding: 1rem 0 0.5rem;
+  max-width: $content-width;
+  margin: 0 auto;
+  background: transparent !important; /* 背景色を完全に抜く */
 
   .home-emoji {
-    font-size: 4.5rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); /* 絵文字を少し浮き立たせる */
+    font-size: 3.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .home-title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #ffffff; /* ★ 背景が濃いので文字は白 */
-    margin: 0 0 0.5rem;
-    letter-spacing: -0.02em;
+    font-size: 2.2rem;
+    font-weight: 850;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.04em;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
   }
 
   .home-tagline {
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.85); /* 半透明の白で上品に */
-    margin: 0;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+    color: #64748b;
+    opacity: 0.8;
   }
+}
+
+/* --- Latest Posts Title (Spacing Fix) --- */
+.latest-title {
+  text-align: left; /* Zenn風に左寄せ */
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  /* タイトルと線、カードとの距離を極限まで詰める */
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+}
+
+/* --- Latest Posts Title (密度アップ) --- */
+.latest-title {
+  text-align: center; /* ヘッダーに合わせて中央揃え */
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  /* ★ タイトルと下の線の間隔を詰める */
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+
+  /* 線を入れる場合は、ここでコントロール */
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.75rem;
 }
 
 /* --- Post Header (記事ページ用) --- */

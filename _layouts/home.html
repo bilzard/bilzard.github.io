@@ -1,40 +1,35 @@
 ---
 layout: default
 ---
+
 <header class="home-header">
-  {% if site.emoji %}
-    <div class="home-emoji">{{ site.emoji }}</div>
-  {% endif %}
+  <div class="home-emoji">{{ site.emoji }}</div>
   <h1 class="home-title">{{ site.title | escape }}</h1>
-  <p class="home-tagline">{{ site.description | default: site.github.project_tagline | escape }}</p>
+  <p class="home-tagline">{{ site.description }}</p>
 </header>
-<div class="main-content"> {{ content }}
-  <h2>Latest Posts</h2>
-  <div>&nbsp;</div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+<div class="post-container">
+  <div class="home-post-main">
+    <h2 class="latest-title">LATEST POSTS</h2>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | absolute_url }}">
+              {% if post.emoji %}{{ post.emoji }} {% endif %}{{ post.title | escape }}
+            </a>
+            {% if jekyll.environment == "development" and post.published == false %}
+              <span class="post-draft-label">DRAFT</span>
+            {% endif %}
+          </h2>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-        {% if post.emoji %}
-            {% assign emoji = post.emoji %}
-        {% else %}
-            {% assign emoji = "" %}
-        {% endif %}
-        <h2>
-          <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ emoji }} {{ post.title | escape }}
-          </a>
-
-          {% if jekyll.environment == "development" and post.published == false %}
-            <span class="post-draft-label">DRAFT</span>
-          {% endif %}
-        </h2>
-
-        {{ post.excerpt | strip_html | normalize_whitespace | truncate: 100 }}
-
-      </li>
-    {% endfor %}
-  </ul>
+  <aside class="post-sidebar">
+    {% include profile.html %}
+  </aside>
 </div>
