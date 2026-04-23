@@ -11,6 +11,9 @@ group :jekyll_plugins do
   # 他に使いたいプラグインがあればここに追加
 end
 
+# テーマを指定（minimaを使っている場合）
+gem "minima", "~> 2.5"
+
 # Ruby 3.0以降でローカルサーバー起動に必要
 gem "webrick", "~> 1.8"
 
