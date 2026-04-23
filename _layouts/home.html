@@ -7,7 +7,6 @@ layout: default
   {{ content }}
 
   <h2>Latest Posts</h2>
-
   <div>&nbsp;</div>
 
   <ul class="post-list">
@@ -17,11 +16,17 @@ layout: default
         {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
 
+          <!-- define page icon -->
+          {% if post.icon %}
+              {% assign icon = post.icon %}
+          {% else %}
+              {% assign icon = "" %}
+          {% endif %}
         <h2>
-          <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
+          <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ icon }} {{ post.title | escape }}</a>
         </h2>
 
-        {{ post.content | strip_html | normalize_whitespace | truncate: 100 }}
+        {{ post.excerpt | strip_html | normalize_whitespace | truncate: 100 }}
 
       </li>
     {% endfor %}
