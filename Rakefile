@@ -29,7 +29,7 @@ categories: blog
 tags:
 latex: true
 toc: true
-published: true
+published: false
 excerpt: ""
 emoji: "😆"
 ---
